@@ -1,0 +1,364 @@
+<div id="tlh">
+<style>
+#tlh{font-family:'Semplicita Pro',Helvetica,Arial,sans-serif;color:#333;font-size:16px;line-height:24px;width:100%;margin:0;padding:0}
+#tlh *,#tlh *:before,#tlh *:after{box-sizing:border-box}
+#tlh,#tlh *:not(.fa){font-family:'Semplicita Pro',Helvetica,Arial,sans-serif !important}
+#tlh i.fa,#tlh i.fa:before{font-family:FontAwesome !important;font-style:normal;font-weight:400 !important}
+#tlh h2.tl-h2,#tlh h3.tl-h3,#tlh .tl-svc-c h3,#tlh .tl-plan-c h3,#tlh .tl-office-card h3{font-weight:100 !important;letter-spacing:0 !important;font-style:normal !important}
+#tlh h2.tl-h2 span,#tlh .tl-svc-c h3 span,#tlh .tl-plan-c h3 span,#tlh h3.tl-h3 span,#tlh h3.tl-h3 b,#tlh .tl-office-card h3 b{font-weight:100 !important}
+#tlh p,#tlh .tl-q,#tlh .tl-a,#tlh .tl-comm a,#tlh .tl-tile-t{font-weight:400 !important;font-style:normal}
+#tlh p b,#tlh p strong,#tlh .tl-a b,#tlh .tl-nap a{font-weight:700 !important}
+#tlh .tl-lead em,#tlh .tl-partners-note{font-style:italic !important}
+#tlh .tl-btn{font-weight:400 !important;font-size:12px !important;text-transform:uppercase !important}
+#tlh .tl-stat h4{font-weight:500 !important}
+#tlh img{max-width:100%;height:auto;display:block;border:0}
+#tlh a{text-decoration:none}
+#tlh .tl-sec{width:100%;padding:60px 20px 80px}
+#tlh .tl-in{max-width:1145px;margin:0 auto}
+#tlh .tl-wide{max-width:1345px;margin:0 auto}
+#tlh h2.tl-h2{font-size:44px;line-height:1.2;font-weight:100;text-transform:uppercase;text-align:center;margin:0 0 18px;letter-spacing:0;color:#2c3e56}
+#tlh h2.tl-h2 span{font-weight:100;color:#93a2b5}
+#tlh .tl-dark h2.tl-h2{color:#fff}
+#tlh p.tl-lead{text-align:center;margin:0 auto 40px;max-width:1060px;font-size:16px;line-height:24px}
+#tlh .tl-lead em{font-style:italic}
+#tlh .tl-lead b{font-weight:700}
+#tlh .tl-dark{background:#2c3e56;color:#fff}
+#tlh .tl-dark p{color:#fff}
+#tlh .tl-dark p.tl-lead{color:#93a2b5}
+#tlh .tl-light{background:#e8edf2}
+#tlh .tl-sage{background:#cfd8e1}
+#tlh .tl-btn{display:inline-block;background:#0a1a2d !important;color:#fff !important;font-size:12px;line-height:1.2;font-weight:400;text-transform:uppercase;letter-spacing:.5px;padding:15px 20px;border:0;border-radius:0;text-align:center;transition:background .2s}
+#tlh .tl-btn:hover{background:#0a2240 !important;color:#fff !important}
+#tlh .tl-btn i{margin-right:8px;font-size:12px}
+#tlh .tl-btn.tl-full{display:block;width:100%}
+#tlh .tl-btn.tl-soft{background:#98a8bb !important;color:#fff !important}
+#tlh .tl-btn.tl-soft:hover{background:#93a2b5 !important}
+#tlh .tl-btn.tl-ghost{background:transparent !important;border:1px solid #93a2b5;color:#fff !important}
+#tlh .tl-btn.tl-ghost:hover{background:#0a1a2d !important}
+#tlh h3.tl-h3{font-size:32px;line-height:1.15;font-weight:100;text-transform:uppercase;margin:0 0 14px;color:#333}
+#tlh h3.tl-h3 b{font-weight:100;color:#2c3e56}
+#tlh .tl-dark h3.tl-h3{color:#fff}
+#tlh .tl-dark h3.tl-h3 span{color:#93a2b5}
+
+/* explore tiles */
+#tlh .tl-tiles{display:grid;grid-template-columns:repeat(4,1fr);gap:28px;padding:0 40px}
+#tlh .tl-tile{position:relative;display:block;background:#2c3e56;overflow:hidden;color:#fff}
+#tlh .tl-tile img{width:100%;aspect-ratio:4/3;object-fit:cover;transition:transform .5s}
+#tlh .tl-tile:hover img{transform:scale(1.06)}
+#tlh .tl-tile img.tl-crop{transform:scale(1.45)}
+#tlh .tl-tile:hover img.tl-crop{transform:scale(1.5)}
+#tlh .tl-why-img.tl-noframe,#tlh .tl-why-img.tl-r.tl-noframe{padding:0 !important}
+#tlh .tl-why-img.tl-noframe:before{display:none}
+#tlh .tl-why-img.tl-noframe img{aspect-ratio:auto}
+#tlh .tl-tile .tl-tile-t{position:relative;z-index:2;background:#2c3e56;padding:18px 14px 20px;text-align:center;font-size:14px;letter-spacing:1.5px;text-transform:uppercase;color:#fff;font-weight:500}
+#tlh .tl-tile .tl-tile-t span{color:#93a2b5;font-weight:400}
+#tlh .tl-tile .tl-tile-d{z-index:3;position:absolute;left:0;right:0;top:0;bottom:0;background:rgba(10,26,45,.9);color:#cfd8e1;font-size:13px;line-height:19px;padding:22px 16px;text-align:center;opacity:0;transition:opacity .3s;display:flex;align-items:center;justify-content:center}
+#tlh .tl-tile:hover .tl-tile-d,#tlh .tl-tile:focus .tl-tile-d{opacity:1}
+#tlh .tl-tile .tl-tile-d p{margin:0;color:#cfd8e1}
+
+/* lifestyle */
+#tlh .tl-life{display:grid;grid-template-columns:1fr 1fr;gap:40px 60px;padding:0 60px}
+#tlh .tl-life-c img{width:100%;aspect-ratio:3/2;object-fit:cover;margin-bottom:22px}
+#tlh .tl-life-c p{color:#2c3e56;margin:0 0 20px;text-align:justify}
+#tlh .tl-life-c p b{font-weight:700;color:#0a2240}
+
+/* market */
+#tlh .tl-market-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin:10px 0 36px}
+#tlh .tl-stat{border:1px solid #93a2b5;padding:28px 20px;text-align:center}
+#tlh .tl-stat > i{font-size:34px;color:#93a2b5;display:block;margin-bottom:14px}
+#tlh .tl-stat h4{margin:0 0 8px;font-size:18px;font-weight:500;text-transform:uppercase;letter-spacing:1px;color:#fff}
+#tlh .tl-stat p{margin:0;color:#cfd8e1;font-size:14px;line-height:21px}
+#tlh .tl-center{text-align:center}
+#tlh .tl-center .tl-btn{margin:6px 8px}
+
+/* services */
+#tlh .tl-svc{display:grid;grid-template-columns:repeat(3,1fr);gap:40px 30px;padding:0 20px}
+#tlh .tl-svc-c{text-align:center}
+#tlh .tl-svc-c > i{font-size:40px;color:#93a2b5;display:block;margin-bottom:14px}
+#tlh .tl-svc-c h3{font-size:28px;line-height:1.1;font-weight:100;text-transform:uppercase;margin:0 0 12px;color:#333}
+#tlh .tl-svc-c h3 span{color:#93a2b5}
+#tlh .tl-svc-c p{margin:0 0 18px;text-align:center}
+#tlh .tl-svc-c p b{font-weight:700}
+
+/* why */
+#tlh .tl-why{display:grid;grid-template-columns:1fr 1fr;gap:40px 60px;align-items:center;padding:10px 60px 30px}
+#tlh .tl-why-img{position:relative;padding:0 50px 40px 0}
+#tlh .tl-why-img:before{content:"";position:absolute;right:0;bottom:0;width:70%;height:75%;background:#93a2b5;opacity:.45}
+#tlh .tl-why-img.tl-r{padding:0 0 40px 50px}
+#tlh .tl-why-img.tl-r:before{right:auto;left:0}
+#tlh .tl-why-img img{position:relative;width:100%;aspect-ratio:4/3;object-fit:cover}
+#tlh .tl-frame{position:relative;width:100%;aspect-ratio:768/684;background:linear-gradient(to bottom,#cfd8e1 0,#cfd8e1 36.5%,#93a2b5 36.5%,#93a2b5 100%)}
+#tlh .tl-frame .tl-ph{position:absolute;left:9.5%;top:10.4%;width:81.1%;height:79.1%;overflow:hidden}
+#tlh .tl-frame .tl-ph img{position:static;width:131.1%;max-width:none;aspect-ratio:auto;margin:-30.1% 0 0 -30.5%}
+#tlh .tl-why-txt p{color:#fff;margin:0 0 22px;text-align:justify}
+#tlh .tl-why-txt .tl-h3{margin-bottom:16px}
+
+/* office */
+#tlh .tl-office{display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:stretch;padding:0 40px}
+#tlh .tl-office-card{background:#fff;padding:40px 44px;border-top:4px solid #0a2240}
+#tlh .tl-office-card .tl-eyebrow{font-size:12px;letter-spacing:2px;text-transform:uppercase;color:#93a2b5;margin:0 0 10px}
+#tlh .tl-office-card h3{font-size:34px;font-weight:100;text-transform:uppercase;margin:0 0 18px;color:#2c3e56}
+#tlh .tl-office-card h3 b{font-weight:100;color:#93a2b5}
+#tlh .tl-office-card p{margin:0 0 14px;color:#333}
+#tlh .tl-office-card .tl-nap{font-size:18px;line-height:28px;margin:0 0 22px}
+#tlh .tl-office-card .tl-nap a{color:#0a2240 !important;font-weight:700}
+#tlh .tl-office-card .tl-nap i{width:26px;color:#93a2b5}
+#tlh .tl-office-map{min-height:360px;background:#cfd8e1}
+#tlh .tl-office-map iframe{width:100%;height:100%;min-height:360px;border:0;display:block;filter:grayscale(.25)}
+
+/* reviews + partners */
+#tlh .tl-reviews{max-width:1100px;margin:0 auto;background:#cfd8e1;padding:40px 40px 20px}
+#tlh .tl-reviews h2.tl-h2{color:#2c3e56;font-size:30px;margin-bottom:24px}
+#tlh .tl-reviews h2.tl-h2 span{color:#0a2240}
+#tlh .tl-partners{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:40px 60px;margin:50px auto 18px;max-width:1100px}
+#tlh .tl-partners img{height:46px;width:auto;filter:brightness(0) invert(1);opacity:.95}
+#tlh .tl-partners-note{text-align:center;font-style:italic;color:#93a2b5 !important;font-size:14px;margin:0}
+
+/* plan */
+#tlh #tl-plan .tl-wide{max-width:1320px}
+#tlh .tl-plan{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+#tlh .tl-plan-c{background:#fff;padding:30px 16px 30px;text-align:center;box-shadow:0 1px 2px rgba(0,0,0,.04)}
+#tlh .tl-plan-c h3{font-size:26px;font-weight:100;text-transform:uppercase;margin:0 0 20px;color:#333;line-height:1.15}
+#tlh .tl-plan-c h3 span{color:#93a2b5}
+#tlh .tl-plan-c img{width:100%;aspect-ratio:16/10;object-fit:cover;margin:0 0 22px}
+#tlh .tl-plan-c p{margin:0 0 22px;color:#333}
+#tlh .tl-plan-c p b{font-weight:700}
+#tlh .tl-plan-c .tl-btn{margin-bottom:10px}
+
+/* community */
+#tlh .tl-comm{text-align:center;font-size:14px;letter-spacing:2.5px;text-transform:uppercase;line-height:30px;margin:0 0 30px}
+#tlh .tl-comm a{color:#fff !important}
+#tlh .tl-comm a:hover{color:#93a2b5 !important}
+#tlh .tl-comm span{color:#93a2b5;margin:0 10px}
+
+/* faq */
+#tlh .tl-faq{display:grid;grid-template-columns:1fr 1fr;gap:12px 24px;max-width:1060px;margin:0 auto 24px}
+#tlh .tl-q{background:#93a2b5;color:#fff;padding:10px 15px;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:12px;font-size:16px;line-height:24px}
+#tlh .tl-q:after{content:"+";font-size:22px;line-height:1;color:#fff}
+#tlh .tl-faq-i.tl-open .tl-q:after{content:"\2212"}
+#tlh .tl-a{display:none;background:#fff;color:#333;padding:16px 18px;font-size:15px;line-height:23px}
+#tlh .tl-a p{color:#333;margin:0}
+#tlh .tl-a b{font-weight:700}
+#tlh .tl-faq-i.tl-open .tl-a{display:block}
+#tlh p.tl-faq-foot{text-align:center;color:#fff;margin:10px 0 0}
+#tlh p.tl-faq-foot a{color:#cfd8e1 !important;text-decoration:underline}
+
+@media (max-width:1300px){#tlh .tl-plan-c h3{font-size:23px}}
+@media (max-width:1024px){
+ #tlh .tl-tiles{grid-template-columns:repeat(3,1fr);padding:0}
+ #tlh .tl-life,#tlh .tl-why{padding:0}
+ #tlh .tl-svc,#tlh .tl-plan,#tlh .tl-market-grid{grid-template-columns:repeat(2,1fr)}
+ #tlh .tl-office{grid-template-columns:1fr;padding:0}
+}
+@media (max-width:768px){
+ #tlh .tl-sec{padding:44px 16px 54px}
+ #tlh h2.tl-h2{font-size:32px}
+ #tlh h3.tl-h3,#tlh .tl-office-card h3{font-size:26px}
+ #tlh .tl-tiles{grid-template-columns:repeat(2,1fr);gap:16px}
+ #tlh .tl-life,#tlh .tl-why,#tlh .tl-svc,#tlh .tl-plan,#tlh .tl-market-grid,#tlh .tl-faq{grid-template-columns:1fr}
+ #tlh .tl-why-img,#tlh .tl-why-img.tl-r{padding:0 24px 24px 0}
+ #tlh .tl-why.tl-flip .tl-why-img{order:-1}
+ #tlh .tl-office-card{padding:28px 22px}
+ #tlh .tl-reviews{padding:24px 16px 10px}
+ #tlh .tl-comm{letter-spacing:1.5px;line-height:28px}
+ #tlh .tl-partners img{height:36px}
+}
+</style>
+
+<!-- EXPLORE -->
+<section class="tl-sec tl-sage" id="tl-explore">
+ <div class="tl-in">
+  <h2 class="tl-h2">Explore Lenoir City <span>&amp; Loudon County</span></h2>
+  <p class="tl-lead">Our Twin Lakes office sits in historic downtown Lenoir City, where Fort Loudoun Lake meets Tellico Lake. From lakefront homes and golf communities to in-town neighborhoods and farmland, these are the places we live, list and sell every day.</p>
+  <div class="tl-tiles">
+   <a class="tl-tile" href="/search#location_search_field=Lenoir%20City%2C%20TN&status=active"><img src="https://brokerage.agent.wallacetn.com/files/2026/01/Loudon-County-Tennessee.jpg" alt="Lenoir City TN homes for sale" loading="lazy"><div class="tl-tile-d"><p>Our hometown. Historic downtown on Broadway, Fort Loudoun Lake access, Lenoir City Schools and a quick drive to I-75 and I-40. Established neighborhoods, new construction and lake lots.</p></div><div class="tl-tile-t">Lenoir <span>City</span></div></a>
+   <a class="tl-tile" href="/search#location_search_field=Loudon%2C%20TN&status=active"><img class="tl-crop" src="https://tylerletner.com/files/2026/01/02.jpg" alt="Loudon TN homes for sale" loading="lazy"><div class="tl-tile-d"><p>The county seat on the Tennessee River. A walkable historic downtown, riverfront parks and a mix of in-town homes, lakefront properties and acreage just south of Lenoir City.</p></div><div class="tl-tile-t">Loudon <span>TN</span></div></a>
+   <a class="tl-tile" href="/search#location_search_field=Tellico%20Village%2C%20Loudon%2C%20TN&status=active"><img src="https://brokerage.agent.wallacetn.com/files/2026/01/Lakes-and-Waterfront.jpg" alt="Tellico Village homes for sale" loading="lazy"><div class="tl-tile-d"><p>Loudon County's premier lake and golf community on Tellico Lake. Championship golf, a yacht club, marinas and an active retiree lifestyle. Villas, golf-course homes and lakefront estates.</p></div><div class="tl-tile-t">Tellico <span>Village</span></div></a>
+   <a class="tl-tile" href="/search#location_search_field=Greenback%2C%20TN&status=active"><img src="https://brokerage.agent.wallacetn.com/files/2026/01/Country-and-Land-02.jpg" alt="Greenback TN homes and land for sale" loading="lazy"><div class="tl-tile-d"><p>Rolling farmland and small-town living between Lenoir City and Maryville. Buyers come to Greenback for acreage, mini-farms and room to breathe while staying close to the lakes.</p></div><div class="tl-tile-t">Greenback <span>TN</span></div></a>
+   <a class="tl-tile" href="/search#location_search_field=Philadelphia%2C%20TN&status=active"><img src="https://brokerage.agent.wallacetn.com/files/2026/01/Monroe-County-Tennessee.jpg" alt="Philadelphia TN homes for sale" loading="lazy"><div class="tl-tile-d"><p>A quiet Loudon County town along Highway 11 between Loudon and Sweetwater. Country homes, pasture and affordable land with Tellico Lake and I-75 minutes away.</p></div><div class="tl-tile-t">Philadelphia <span>TN</span></div></a>
+   <a class="tl-tile" href="/search#location_search_field=Friendsville%2C%20TN&status=active"><img src="https://brokerage.agent.wallacetn.com/files/2026/01/Blount-County-Tennessee.jpg" alt="Friendsville TN homes for sale" loading="lazy"><div class="tl-tile-d"><p>Just across the Loudon-Blount line, Friendsville offers small-town charm, Fort Loudoun Lake access and an easy commute to Lenoir City, Maryville and Alcoa.</p></div><div class="tl-tile-t">Friendsville <span>TN</span></div></a>
+   <a class="tl-tile" href="/search#location_search_field=Farragut%2C%20TN&status=active"><img src="https://brokerage.agent.wallacetn.com/files/2026/01/Suburban-and-Downtown.jpg" alt="Farragut TN homes for sale" loading="lazy"><div class="tl-tile-d"><p>Our neighbor to the east on Kingston Pike. Top-rated schools, planned subdivisions and Fort Loudoun Lake frontage, about 15 minutes from the Twin Lakes office.</p></div><div class="tl-tile-t">Farragut <span>TN</span></div></a>
+   <a class="tl-tile" href="/search#location_search_field=Kingston%2C%20TN&status=active"><img src="https://brokerage.agent.wallacetn.com/files/2026/01/Roane-County-Tennessee.jpg" alt="Kingston TN homes for sale" loading="lazy"><div class="tl-tile-d"><p>West across the Roane County line on Watts Bar Lake. Kingston pairs lakefront living and a historic courthouse square with quick I-40 access to Lenoir City and Oak Ridge.</p></div><div class="tl-tile-t">Kingston <span>TN</span></div></a>
+  </div>
+ </div>
+</section>
+
+<!-- LIFESTYLE -->
+<section class="tl-sec tl-light" id="tl-lifestyle">
+ <div class="tl-in">
+  <h2 class="tl-h2">Search Homes <span>By Lifestyle</span></h2>
+  <p class="tl-lead"><em>Start with how you want to live. Loudon County has two lakes, championship golf, a historic downtown and plenty of open land. Pick a category to see our local recommendations and current homes for sale.</em></p>
+  <div class="tl-life">
+   <div class="tl-life-c"><img src="https://brokerage.agent.wallacetn.com/files/2026/01/Lakes-and-Waterfront.jpg" alt="Lakefront homes on Fort Loudoun and Tellico Lake"><h3 class="tl-h3"><b>Lake &amp;</b> Waterfront</h3><p>Lenoir City is the only place where <b>Fort Loudoun Lake</b> and <b>Tellico Lake</b> meet. We know the coves, the <b>dock permits</b>, the water depth and the marinas, and we'll show you lakefront homes and lake-access neighborhoods on both lakes plus Watts Bar.</p><a class="tl-btn tl-full" href="/search#location_search_field=Loudon%20County%2C%20TN&status=active&water=1"><i class="fa fa-tint"></i>Search Waterfront Homes</a></div>
+   <div class="tl-life-c"><img src="https://brokerage.agent.wallacetn.com/files/2026/01/Mountain-Homes-02.jpg" alt="Golf and lake community homes in Tellico Village"><h3 class="tl-h3"><b>Golf &amp;</b> Lake Communities</h3><p>From <b>Tellico Village</b> to <b>WindRiver</b> and <b>Rarity Bay</b>, Loudon County is home to some of East Tennessee's best-known golf and lake communities. We'll walk you through <b>HOA fees</b>, amenities and which neighborhoods fit how you want to live.</p><a class="tl-btn tl-full" href="/search#location_search_field=Tellico%20Village%2C%20Loudon%2C%20TN&status=active"><i class="fa fa-flag"></i>Search Golf &amp; Lake Communities</a></div>
+   <div class="tl-life-c"><img src="https://brokerage.agent.wallacetn.com/files/2026/01/Suburban-and-Downtown.jpg" alt="In-town neighborhoods in Lenoir City"><h3 class="tl-h3"><b>In-Town &amp;</b> Neighborhoods</h3><p>Established streets near <b>downtown Lenoir City</b>, newer subdivisions off Highway 321 and 70, and homes zoned for <b>Lenoir City Schools</b> or <b>Loudon County Schools</b>. Close to shopping, the lake and the interstate for Knoxville and Oak Ridge commuters.</p><a class="tl-btn tl-full" href="/search#location_search_field=Lenoir%20City%2C%20TN&status=active&ptype=1"><i class="fa fa-home"></i>Search Lenoir City Neighborhoods</a></div>
+   <div class="tl-life-c"><img src="https://brokerage.agent.wallacetn.com/files/2026/01/Country-and-Land-02.jpg" alt="Country homes and land in Loudon County"><h3 class="tl-h3"><b>Country &amp;</b> Land</h3><p>Want <b>acreage</b>, a barn or room for a workshop? Greenback, Philadelphia and the farmland around Loudon still offer <b>mini-farms</b>, pasture and building lots. We cover <b>septic, wells, road frontage</b> and what to check before you buy land.</p><a class="tl-btn tl-full" href="/search#location_search_field=Loudon%20County%2C%20TN&status=active&ptype=5"><i class="fa fa-tree"></i>Search Land &amp; Acreage</a></div>
+  </div>
+ </div>
+</section>
+
+<!-- MARKET -->
+<section class="tl-sec tl-dark" id="tl-market">
+ <div class="tl-in">
+  <h2 class="tl-h2">Loudon County <span>Market Snapshot</span></h2>
+  <p class="tl-lead">Loudon County keeps drawing buyers who want lake living, golf and a short drive to Knoxville. Pricing and days on market vary a lot between a Tellico Village villa, an in-town Lenoir City home and a lakefront lot, so we build your report around the exact neighborhood and property type you care about.</p>
+  <div class="tl-market-grid">
+   <div class="tl-stat"><i class="fa fa-line-chart"></i><h4>Neighborhood Pricing</h4><p>Recent sales and active competition for the specific area or subdivision you're watching.</p></div>
+   <div class="tl-stat"><i class="fa fa-tint"></i><h4>Lake &amp; Golf Trends</h4><p>What waterfront and golf-community homes are really selling for on Fort Loudoun and Tellico Lake.</p></div>
+   <div class="tl-stat"><i class="fa fa-home"></i><h4>Your Home's Value</h4><p>A no-pressure estimate from an agent who works Lenoir City and Loudon County every day.</p></div>
+  </div>
+  <div class="tl-center">
+   <a class="tl-btn" href="/contact"><i class="fa fa-file-text-o"></i>Request a Loudon County Market Report</a>
+   <a class="tl-btn tl-ghost" href="tel:+18653281111"><i class="fa fa-phone"></i>Call (865) 328-1111</a>
+  </div>
+ </div>
+</section>
+
+<!-- SERVICES -->
+<section class="tl-sec tl-light" id="tl-services">
+ <div class="tl-in">
+  <h2 class="tl-h2">Real Estate <span>Services</span></h2>
+  <p class="tl-lead">Wallace Twin Lakes supports <b>buyers</b>, <b>sellers</b>, <b>investors</b> and <b>relocating clients</b> across Lenoir City and Loudon County, backed by the full resources of Wallace Real Estate. Explore the services below to find the right help.</p>
+  <div class="tl-svc">
+   <div class="tl-svc-c"><i class="fa fa-plane"></i><h3>Relocation <span>Services</span></h3><p>Moving to the lake from out of state? We help with <b>area shortlists</b>, video tours, timelines and trusted local vendors so your move to Lenoir City or Tellico Village goes smoothly.</p><a class="tl-btn tl-full" href="/relocation"><i class="fa fa-plane"></i>Get Relocation Help</a></div>
+   <div class="tl-svc-c"><i class="fa fa-diamond"></i><h3>Luxury <span>Services</span></h3><p>Lakefront estates and golf-course homes need <b>elevated presentation</b> and <b>targeted marketing</b>. As a Luxury Portfolio International affiliate we put Loudon County's finest homes in front of qualified buyers.</p><a class="tl-btn tl-full" href="/luxury"><i class="fa fa-diamond"></i>Get Luxury Strategy</a></div>
+   <div class="tl-svc-c"><i class="fa fa-building-o"></i><h3>Property <span>Management</span></h3><p>Own a rental or lake house you're not using year-round? Wallace's property management team handles <b>tenant placement</b>, <b>maintenance</b> and <b>reporting</b> so your investment stays steady.</p><a class="tl-btn tl-full" href="/contact"><i class="fa fa-building-o"></i>Get Management Help</a></div>
+   <div class="tl-svc-c"><i class="fa fa-briefcase"></i><h3>Commercial <span>Services</span></h3><p>From <b>downtown Lenoir City storefronts</b> to land along Highway 321 and the I-75 corridor, Wallace Commercial brings local knowledge and underwriting support to every deal.</p><a class="tl-btn tl-full" href="/contact"><i class="fa fa-briefcase"></i>Get Commercial Guidance</a></div>
+   <div class="tl-svc-c"><i class="fa fa-home"></i><h3>Residential <span>Services</span></h3><p>We help buyers win with <b>smart search and negotiation</b>, and help sellers get top dollar with prep strategy, strong marketing and steady follow-through from list to close.</p><a class="tl-btn tl-full" href="/contact"><i class="fa fa-home"></i>Get Buying &amp; Selling Help</a></div>
+   <div class="tl-svc-c"><i class="fa fa-wrench"></i><h3>New <span>Construction</span></h3><p>New subdivisions are going up across Lenoir City and Loudon County. We help you compare <b>builders</b>, <b>lots</b>, <b>timelines</b> and <b>upgrades</b>, and we read the contract and warranty with you.</p><a class="tl-btn tl-full" href="/search#location_search_field=Loudon%20County%2C%20TN&status=active&new_const=1"><i class="fa fa-wrench"></i>Get New Build Help</a></div>
+  </div>
+ </div>
+</section>
+
+<!-- WHY -->
+<section class="tl-sec tl-dark" id="tl-why">
+ <div class="tl-in">
+  <h2 class="tl-h2">Why Wallace <span>Twin Lakes</span></h2>
+  <p class="tl-lead"><em>A local Lenoir City office backed by the data, marketing and reach of Wallace Real Estate, serving East Tennessee since 1936.</em></p>
+
+  <div class="tl-why">
+   <div class="tl-why-img tl-noframe"><img src="https://tylerletner.com/files/2026/01/01.jpg" alt="Fort Loudoun Lake at Lenoir City"></div>
+   <div class="tl-why-txt"><h3 class="tl-h3"><span>Natural Beauty</span> By The Water</h3><p>Lenoir City sits where Fort Loudoun Lake and Tellico Lake come together, with Watts Bar just downstream. Mornings start with mist on the water and evenings end on a dock or a back porch. Our agents know the coves, the dock rules and the neighborhoods that get the best sunsets.</p><a class="tl-btn" href="/search#location_search_field=Lenoir%20City%2C%20TN&status=active&water=1"><i class="fa fa-tint"></i>See Lakefront Homes</a></div>
+  </div>
+
+  <div class="tl-why tl-flip">
+   <div class="tl-why-txt"><h3 class="tl-h3"><span>Small Town,</span> Fully Lived</h3><p>Downtown Lenoir City still has a Friday-night feel, with local restaurants, festivals and neighbors who wave. Lenoir City has its own school system, and growth has been steady rather than rushed. You get real community without giving up a 25-minute drive to Knoxville or Oak Ridge.</p><a class="tl-btn" href="/directory"><i class="fa fa-users"></i>Talk To A Lenoir City Agent</a></div>
+   <div class="tl-why-img tl-r tl-noframe"><img src="https://tylerletner.com/files/2026/01/02.jpg" alt="Downtown Lenoir City, Tennessee"></div>
+  </div>
+
+  <div class="tl-why">
+   <div class="tl-why-img tl-noframe"><img src="https://tylerletner.com/files/2026/01/03.jpg" alt="Relocating to Lenoir City and Tellico Village"></div>
+   <div class="tl-why-txt"><h3 class="tl-h3"><span>A Gentle</span> Arrival</h3><p>Many of our clients are arriving from somewhere else: retirees heading to Tellico Village, families moving for work in Knoxville, and buyers who just want to be near the water. We handle the details, from area tours and lenders to inspectors who understand lake properties, so your move feels calm.</p><a class="tl-btn" href="/relocation"><i class="fa fa-map-o"></i>Start Your Plan</a></div>
+  </div>
+
+  <div class="tl-why tl-flip">
+   <div class="tl-why-txt"><h3 class="tl-h3"><span>Local Office,</span> Real Reviews</h3><p>Wallace Twin Lakes is built for Lenoir City and Loudon County buyers and sellers: neighborhood knowledge, pricing instincts and straight answers when it counts. Clients consistently call out clear communication, clean follow-through and calm guidance from the first showing to closing.</p><a class="tl-btn" href="/reviews"><i class="fa fa-star"></i>Read Our Reviews</a></div>
+   <div class="tl-why-img tl-r tl-noframe"><div class="tl-frame"><div class="tl-ph"><img src="https://brokerage.agent.wallacetn.com/files/2026/01/Wallace-Real-Estate-Google-Reviews.png" alt="Wallace Twin Lakes five-star client reviews"></div></div></div>
+  </div>
+
+  <div class="tl-reviews">
+   <h2 class="tl-h2">What Clients <span>Are Saying</span></h2>
+   <div id="TestimonialTree_Widget_71533"></div>
+   <script type="text/javascript" src="https://application.testimonialtree.com/api/v1/widgets/script?widgetid=71533&locationid=1813938387"></script>
+  </div>
+
+  <div class="tl-partners">
+   <img src="https://brokerage.agent.wallacetn.com/files/2026/01/LeadingRE-Logo-Homepage.png" alt="Leading Real Estate Companies of the World">
+   <img src="https://brokerage.agent.wallacetn.com/files/2026/01/Luxury-Portfolio-International-Logo-Homepage.png" alt="Luxury Portfolio International">
+   <img src="https://brokerage.agent.wallacetn.com/files/2026/01/CMG-Logo-Homepage.png" alt="CMG Financial">
+   <img src="https://brokerage.agent.wallacetn.com/files/2026/01/Melrose-Logo-Homepage.png" alt="Melrose Title Company">
+   <img src="https://brokerage.agent.wallacetn.com/files/2026/01/2-10-Logo-Homepage.png" alt="2-10 Home Buyers Warranty">
+   <img src="https://brokerage.agent.wallacetn.com/files/2026/01/Dogwood-Logo-Homepage.png" alt="Dogwood Insurance Group">
+  </div>
+  <p class="tl-partners-note">Trusted partners we work with.</p>
+ </div>
+</section>
+
+<!-- OFFICE -->
+<section class="tl-sec tl-sage" id="tl-office">
+ <div class="tl-in">
+  <h2 class="tl-h2">Visit Our <span>Lenoir City Office</span></h2>
+  <p class="tl-lead">Wallace Twin Lakes is in historic downtown Lenoir City, a block off Broadway. Stop in, or call and we'll meet you at the property.</p>
+  <div class="tl-office">
+   <div class="tl-office-card">
+    <p class="tl-eyebrow">Wallace Real Estate</p>
+    <h3><b>Twin Lakes</b> Office</h3>
+    <p class="tl-nap"><i class="fa fa-map-marker"></i>105 N. A Street<br><span style="display:inline-block;width:26px"></span>Lenoir City, TN 37771</p>
+    <p class="tl-nap"><i class="fa fa-phone"></i><a href="tel:+18653281111">(865) 328-1111</a></p>
+    <p class="tl-nap"><i class="fa fa-envelope-o"></i><a href="mailto:TwinLakes@Wallacetn.com">TwinLakes@Wallacetn.com</a></p>
+    <p>Managing Broker: Tyler Letner</p>
+    <a class="tl-btn" href="https://www.google.com/maps/search/?api=1&query=Wallace+Twin+Lakes+105+N+A+St+Lenoir+City+TN+37771" target="_blank" rel="noopener"><i class="fa fa-location-arrow"></i>Get Directions</a>
+    <a class="tl-btn tl-soft" href="/directory" style="margin-left:8px"><i class="fa fa-users"></i>Meet Our Agents</a>
+   </div>
+   <div class="tl-office-map"><iframe title="Map to Wallace Twin Lakes, 105 N A St, Lenoir City TN" src="https://maps.google.com/maps?q=105+N+A+St,+Lenoir+City,+TN+37771&z=15&output=embed" referrerpolicy="no-referrer-when-downgrade"></iframe></div>
+  </div>
+ </div>
+</section>
+
+<!-- PLAN -->
+<section class="tl-sec tl-light" id="tl-plan">
+ <div class="tl-wide">
+  <h2 class="tl-h2">Plan <span>Your Next Move</span></h2>
+  <p class="tl-lead">Talk with a Lenoir City-based Wallace agent to get neighborhood-specific comps, strategy and showing coordination.</p>
+  <div class="tl-plan">
+   <div class="tl-plan-c"><h3>Sell <span>With Confidence</span></h3><img src="https://brokerage.agent.wallacetn.com/files/2026/01/Walace-Real-Estate-Listing-a-Home02.jpg" alt="Selling a home in Lenoir City"><p>Get a pricing plan built on <b>real Loudon County comps</b>, <b>local demand</b> and <b>your timeline</b>. We'll map prep priorities, launch strategy and negotiation levers, then market your home with modern media and consistent follow-up.</p><a class="tl-btn tl-full" href="/contact">Get My Home Value</a><a class="tl-btn tl-full tl-soft" href="/sellers">Listing Consult</a></div>
+   <div class="tl-plan-c"><h3>Relocation <span>Concierge</span></h3><img src="https://brokerage.agent.wallacetn.com/files/2026/01/Walace-Real-Estate-Relocation.jpg" alt="Relocating to Loudon County"><p>Moving to the lake? Share your <b>timeline</b>, <b>commute</b> and <b>must-haves</b>. We'll narrow areas quickly, connect trusted lenders and vendors, and keep details organized so your move feels simple instead of stressful.</p><a class="tl-btn tl-full" href="/relocation">Plan My Move</a><a class="tl-btn tl-full tl-soft" href="https://s3.amazonaws.com/files.usmre.com/9302/260123_Referral%20Connections_PDF_01.pdf" target="_blank" rel="noopener">Relocation Guide</a></div>
+   <div class="tl-plan-c"><h3>Investment <span>Opportunities</span></h3><img src="https://brokerage.agent.wallacetn.com/files/2026/01/Wallace-Real-Estate-Investment-Opportunities.jpg" alt="Investment property in Lenoir City"><p>Lake rentals, in-town duplexes and land along the I-75 growth corridor. Compare deals with clarity using <b>cash flow</b>, <b>demand</b>, <b>resale upside</b> and <b>risk</b>, and move fast when the numbers work.</p><a class="tl-btn tl-full" href="/search#location_search_field=Loudon%20County%2C%20TN&status=active&ptype=8%2C9">Explore Inventory</a><a class="tl-btn tl-full tl-soft" href="/contact">Strategy Call</a></div>
+  </div>
+ </div>
+</section>
+
+<!-- COMMUNITY -->
+<section class="tl-sec tl-dark" id="tl-community">
+ <div class="tl-wide">
+  <h2 class="tl-h2">Search <span>By Community</span></h2>
+  <p class="tl-lead">Not sure where to start? Browse the Lenoir City and Loudon County communities we serve, then filter listings by price, home type and lifestyle.</p>
+  <p class="tl-comm">
+   <a href="/search#location_search_field=Lenoir%20City%2C%20TN&status=active">Lenoir City</a><span>&#10022;</span>
+   <a href="/search#location_search_field=Loudon%2C%20TN&status=active">Loudon</a><span>&#10022;</span>
+   <a href="/search#location_search_field=Tellico%20Village%2C%20Loudon%2C%20TN&status=active">Tellico Village</a><span>&#10022;</span>
+   <a href="/search#location_search_field=Greenback%2C%20TN&status=active">Greenback</a><span>&#10022;</span>
+   <a href="/search#location_search_field=Philadelphia%2C%20TN&status=active">Philadelphia</a><span>&#10022;</span>
+   <a href="/search#location_search_field=Friendsville%2C%20TN&status=active">Friendsville</a><span>&#10022;</span>
+   <a href="/search#location_search_field=Farragut%2C%20TN&status=active">Farragut</a><span>&#10022;</span>
+   <a href="/search#location_search_field=Kingston%2C%20TN&status=active">Kingston</a><span>&#10022;</span>
+   <a href="/search#location_search_field=Vonore%2C%20TN&status=active">Vonore</a><span>&#10022;</span>
+   <a href="/search#location_search_field=Sweetwater%2C%20TN&status=active">Sweetwater</a><span>&#10022;</span>
+   <a href="/search#location_search_field=Loudon%20County%2C%20TN&status=active">Loudon County</a>
+  </p>
+  <div class="tl-center"><a class="tl-btn" href="/search#location_search_field=Loudon%20County%2C%20TN&status=active"><i class="fa fa-search"></i>Search All Loudon County Homes</a></div>
+ </div>
+</section>
+
+<!-- FAQ -->
+<section class="tl-sec tl-dark" id="tl-faq" style="padding-top:40px;padding-bottom:50px;border-top:1px solid #3b4d66">
+ <div class="tl-in">
+  <h2 class="tl-h2">Lenoir City &amp; Loudon County <span>Real Estate FAQs</span></h2>
+  <p class="tl-lead"><em>Quick answers to the questions we hear most about buying, selling and relocating to Lenoir City, Tellico Village and the rest of Loudon County.</em></p>
+  <div class="tl-faq">
+   <div class="tl-faq-i"><div class="tl-q" role="button" tabindex="0">Which lake is Lenoir City on?</div><div class="tl-a"><p>Both. Lenoir City sits between <b>Fort Loudoun Lake</b> (the Tennessee River side) and <b>Tellico Lake</b> (the Little Tennessee River side), joined by a canal near the dams. That's where the "Twin Lakes" name comes from. Watts Bar Lake begins just below Fort Loudoun Dam toward Kingston.</p></div></div>
+   <div class="tl-faq-i"><div class="tl-q" role="button" tabindex="0">What's the commute from Lenoir City to Knoxville or Oak Ridge?</div><div class="tl-a"><p>Lenoir City sits at the junction of <b>I-75 and I-40</b>. Most of our clients plan on about 25 to 35 minutes to downtown Knoxville, 15 minutes to Farragut and Turkey Creek, and about 30 minutes to Oak Ridge via Highway 95. Tellico Village and Loudon add roughly 10 to 15 minutes.</p></div></div>
+   <div class="tl-faq-i"><div class="tl-q" role="button" tabindex="0">What should I know about buying a lakefront home here?</div><div class="tl-a"><p>Shoreline on Fort Loudoun and Tellico is managed by <b>TVA</b>, so check the dock permit, what shoreline alterations are allowed, water depth at the dock in winter pool, and whether the lot is in a flood zone. We'll also help you confirm septic or sewer, road access and any HOA rules before you write an offer.</p></div></div>
+   <div class="tl-faq-i"><div class="tl-q" role="button" tabindex="0">Is Tellico Village right for me?</div><div class="tl-a"><p>Tellico Village is a large planned community on Tellico Lake with three golf courses, a yacht club, pools, recreation centers and dozens of clubs. It's popular with retirees and active adults, though it is not age-restricted. Expect a property owners' association assessment on top of your home cost. We'll walk you through the fees, the different neighborhoods and resale trends.</p></div></div>
+   <div class="tl-faq-i"><div class="tl-q" role="button" tabindex="0">How do schools work in Lenoir City and Loudon County?</div><div class="tl-a"><p>There are two public systems: <b>Lenoir City Schools</b> serves homes inside the city limits, and <b>Loudon County Schools</b> serves the rest of the county, including Loudon, Greenback and Philadelphia. Zoning follows the property, not the mailing address, so we verify the exact school for any home you're considering.</p></div></div>
+   <div class="tl-faq-i"><div class="tl-q" role="button" tabindex="0">How competitive is the Loudon County market?</div><div class="tl-a"><p>It depends on price range and property type. Well-priced in-town homes and lakefront under the local median can move quickly, while higher-end lake and golf properties usually allow more time. Strong offers pair a clean <b>pre-approval or proof of funds</b> with realistic inspection and closing terms. We'll use recent Loudon County comps to set your strategy.</p></div></div>
+   <div class="tl-faq-i"><div class="tl-q" role="button" tabindex="0">What do I need to do before selling my Lenoir City home?</div><div class="tl-a"><p>Start with <b>pricing</b>, <b>condition</b> and <b>presentation</b>. We'll do a pre-listing walk-through to prioritize high-impact fixes, pull current Loudon County comparable sales, and plan photography and launch timing. Lake and golf homes also benefit from highlighting dock, view and community amenities in the marketing.</p></div></div>
+   <div class="tl-faq-i"><div class="tl-q" role="button" tabindex="0">I'm relocating to Lenoir City from out of state. Where do I start?</div><div class="tl-a"><p>Start with your <b>move date</b>, <b>budget</b> and whether you want lakefront, golf, in-town or acreage. We'll set up a search, send video tours when you can't visit, line up a local lender, and plan a tour weekend around Lenoir City, Tellico Village, Loudon and Greenback so you can compare them in person.</p></div></div>
+  </div>
+  <p class="tl-faq-foot">Have more questions? <a href="/contact">Get in touch</a> or call <a href="tel:+18653281111">(865) 328-1111</a> and tell us what you're looking for.</p>
+ </div>
+</section>
+
+<script>
+(function(){
+  var root=document.getElementById('tlh'); if(!root) return;
+  var items=root.querySelectorAll('.tl-faq-i');
+  Array.prototype.forEach.call(items,function(it){
+    var q=it.querySelector('.tl-q');
+    function toggle(){ var open=it.classList.contains('tl-open'); Array.prototype.forEach.call(items,function(o){o.classList.remove('tl-open')}); if(!open) it.classList.add('tl-open'); }
+    q.addEventListener('click',toggle);
+    q.addEventListener('keydown',function(e){ if(e.key==='Enter'||e.key===' '){e.preventDefault();toggle();} });
+  });
+})();
+</script>
+</div>

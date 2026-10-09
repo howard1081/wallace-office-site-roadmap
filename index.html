@@ -1,0 +1,229 @@
+<!doctype html><html><head><meta charset='utf-8'><meta name='viewport' content='width=device-width,initial-scale=1'><title>Wallace Office Site Localization Roadmap</title><style>body{font-family:'Semplicita Pro',Helvetica,Arial,sans-serif;color:#333;line-height:1.6;max-width:980px;margin:0 auto;padding:40px 24px;background:#fff}
+h1{font-weight:100;color:#0a1a2d;font-size:38px;letter-spacing:1px;border-bottom:3px solid #cfd8e1;padding-bottom:12px}
+h2{font-weight:300;color:#2c3e56;font-size:26px;margin-top:48px;border-left:6px solid #93a2b5;padding-left:12px}
+h3{font-weight:400;color:#0a1a2d;font-size:19px;margin-top:30px}
+table{border-collapse:collapse;width:100%;margin:16px 0;font-size:15px}
+th{background:#0a1a2d;color:#fff;text-align:left;padding:8px 10px;font-weight:400}
+td{border-bottom:1px solid #e8edf2;padding:8px 10px;vertical-align:top}
+code{background:#e8edf2;padding:1px 5px;font-size:14px}
+pre{background:#0a1a2d;color:#cfd8e1;padding:16px;overflow:auto;font-size:14px}
+pre code{background:none;color:inherit;padding:0}
+a{color:#2c3e56}
+hr{border:0;border-top:1px solid #cfd8e1;margin:40px 0}
+blockquote{border-left:4px solid #93a2b5;margin:0;padding:4px 16px;color:#555}
+li{margin:4px 0}</style></head><body><h1>Wallace Office Site Localization Roadmap</h1>
+<p><strong>Model site:</strong> Wallace Twin Lakes — https://twinlakesoffice.agent.wallacetn.com/ (Lenoir City / Loudon County)
+<strong>Applies to:</strong> the other 10 Wallace office agent sites cloned from the Nelson (Maryville) site.
+<strong>Owner:</strong> Howard (Wallace Real Estate marketing). <strong>Executor:</strong> Devin.</p>
+<p>The goal for every office site: rank for <strong>its own town, county and nearby communities</strong>, link only to <strong>its own pages</strong>, carry <strong>its own office details</strong>, and <strong>not</strong> reproduce all of East Tennessee (that competes with wallacetn.com). Keep the Wallace design exactly as it is; change copy, links and local scope only.</p>
+<hr />
+<h2>0. Ground rules (Howard's, do not break)</h2>
+<ol>
+<li><strong>Right site first.</strong> Moxi → MY SITES → "Wallace (TN) <Office> Office" → Dashboard. Confirm the admin URL is <code>&lt;office&gt;office.agent.wallacetn.com</code> before touching anything.</li>
+<li><strong>HTML blocks, not module-by-module edits.</strong> Replace cloned Beaver Builder copy rows with one self-contained, scoped HTML block per page. "KEEP THE DESIGN PRINCIPALS in place - do NOT modify them too much."</li>
+<li><strong>Never delete.</strong> Pages stay published; irrelevant ones are <strong>hidden from the menu only</strong>. Old layouts are kept as hidden "Copy" pages before any page is rebuilt.</li>
+<li><strong>Local, not regional.</strong> Office town + its counties + nearby towns only. No 22-county grid, no 40-town community list, no "Knoxville &amp; East Tennessee" headings. Point anything broader to wallacetn.com with a single link.</li>
+<li><strong>Every link stays on the office site</strong> (<code>/contact</code>, <code>/directory</code>, <code>/search#…</code>, <code>/our-office</code>, etc.). Zero links to nelson-realtors.com or any other office site.</li>
+<li><strong>Fonts are forced.</strong> Moxi theme CSS overrides headings; every block forces Semplicita Pro with <code>!important</code>. Headings are thin (weight 100), two-tone by colour only — never bold/700.</li>
+<li><strong>Fix one problem at a time and carry the fix to every similar page/section.</strong></li>
+<li><strong>Verify with cache-busted URLs</strong> (<code>?v=NN</code>); Varnish serves stale pages for a few minutes.</li>
+</ol>
+<hr />
+<h2>1. Discovery (before editing) — ~30 min</h2>
+<p>Collect for the office:</p>
+<table>
+<thead>
+<tr>
+<th>Item</th>
+<th>Where</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Street address, phone, email, managing broker</td>
+<td>Moxi office record; wallacetn.com/directory/offices/<slug>; Google Business Profile ("<office> wallace")</td>
+</tr>
+<tr>
+<td>Office UUID (for Property List checks)</td>
+<td>Moxi office record / Featured Properties widget settings</td>
+</tr>
+<tr>
+<td>Agent roster + directory profile URLs</td>
+<td>Moxi roster / <code>/directory</code> on the office site</td>
+</tr>
+<tr>
+<td>Existing About-the-office page (if the broker has one, e.g. tylerletner.com/about-twin-lakes-office)</td>
+<td>Ask Howard / search broker's site</td>
+</tr>
+<tr>
+<td>Primary town, county, 6–8 nearby towns, the lakes/landmarks, interstates, school systems, hospital</td>
+<td>Local knowledge + maps</td>
+</tr>
+<tr>
+<td>Which <strong>county pages</strong> on the site are relevant (Twin Lakes: Loudon, Anderson, Knox, Blount, Monroe, Roane)</td>
+<td>Counties dropdown</td>
+</tr>
+<tr>
+<td>Which <strong>community pages</strong> are viable (Twin Lakes: 16 of 40)</td>
+<td>Communities dropdown; map each to its county, drop Knoxville neighbourhoods</td>
+</tr>
+<tr>
+<td>Office hours (GBP vs. other listings often disagree — confirm with Howard before publishing)</td>
+<td>GBP</td>
+</tr>
+<tr>
+<td>Office-specific Zoho market-report form, Buyer Guide / Seller Guide MoxiPresent links (if any)</td>
+<td>Ask Howard. Nelson's must never remain.</td>
+</tr>
+</tbody>
+</table>
+<p>Then audit the live site (curl + grep): count <code>nelson</code>, <code>maryville</code>, <code>nelson-realtors</code>, <code>Foothills Mall</code>, <code>982-0500</code> on every top-menu page. Twin Lakes started with 79 Nelson links on the home page alone.</p>
+<hr />
+<h2>2. Change list, in the order it was done on Twin Lakes</h2>
+<h3>2.1 Home page (post 4 on Twin Lakes; check the ID per site)</h3>
+<ul>
+<li>Back up: Site Pages → row action <strong>Duplicate</strong> → "Copy of Home" (hide it in the menu).</li>
+<li>Delete the cloned copy rows; keep Moxi's hero/search, CTA strip, listings, journal, consent rows (<code>scripts/bbapply.py</code> lists what was kept/removed).</li>
+<li>Insert one HTML module with <code>templates/block.html</code> (wrapper <code>#tlh</code>). Sections, in order, matching the original design:</li>
+<li>Explore <Town> &amp; <County> — 8 local area tiles (image, hover blurb, label) → <code>/search#location_search_field=&lt;Town&gt;%2C%20TN&amp;status=active</code></li>
+<li>Search Homes By Lifestyle (Lake &amp; Waterfront, Golf/Mountain, Suburban &amp; Downtown, Country &amp; Land, Investment) → local searches</li>
+<li><County> Market Snapshot cards + "Request a <County> Market Report" button → <code>/contact</code> (replaces Nelson's Zoho form unless the office has its own form)</li>
+<li>Why Wallace — three local story sections with framed photos + Real Reviews in the same frame</li>
+<li>Plan Your Next Move cards (Buying, Selling, Relocation, Investment Opportunities, Luxury) — width 1320px so titles stay on one line</li>
+<li>Visit Our <Town> Office — address, phone, email, broker, embedded Google map, directions</li>
+<li>Local FAQ (6–8 Qs)</li>
+<li>Communities list (local towns only) + Journal heading</li>
+<li>Yoast title/meta: <code>"&lt;Town&gt; TN Real Estate | Wallace &lt;Office&gt; Office"</code> + description with the office phone.</li>
+<li>Verify: <code>#tlh</code> present, Nelson count 0, all tiles show labels, desktop + mobile screenshots.</li>
+</ul>
+<h3>2.2 About → Our Office (new page, slug <code>/our-office</code>)</h3>
+<ul>
+<li>Duplicate Home, rename to "Our Office", slug <code>our-office</code>, remove the duplicated rows except the HTML row (<code>scripts/bbapply2.py</code>).</li>
+<li>Content (<code>templates/office.html</code>): office logo + intro, NAP + broker + map, broker's three local stories/photos, agent roster linking to <code>/directory/...</code> profiles, "areas we serve" search links, call/message/search CTA. <strong>Leave out any East-TN-wide "Areas of Expertise" list.</strong></li>
+<li>Yoast: <code>"Wallace &lt;Office&gt; | &lt;Town&gt; TN Real Estate Office"</code>.</li>
+<li>Site Pages: nest under <strong>About</strong> as the first child (replaces the brokerage "Our Offices" idea with "Our Office").</li>
+</ul>
+<h3>2.3 Custom footer (site-wide)</h3>
+<ul>
+<li>The 8-office block is the brokerage <strong>Default Footer</strong> (saved row 7197, read-only).</li>
+<li>Build the site's own footer template (<code>/fl-builder-template/footer?fl_builder&amp;fl_builder_ui</code>, Twin Lakes post 162) as one HTML module with <code>templates/footer.html</code> (wrapper <code>#tlf</code>) via <code>scripts/footer_apply.py</code>.</li>
+<li>Then <strong>Appearance → Footer → Custom Footer → Update</strong>.</li>
+<li>Structure copied from wallacetn.com but office-only: office intro/NAP column · Buyers &amp; Sellers links · Our Office links (Our Office, Meet Our Agents, Reviews, Blog, Contact) · Social · "Request An Evaluation" CTA · single office strip with one "See all Wallace offices" link to wallacetn.com · two buttons (Find A <Office> Agent, Search <County> Homes) · logo row · legal text with auto year · Moxi Terms/Privacy.</li>
+<li>X/Twitter icon is an inline SVG (FA 4.7 has no X logo).</li>
+</ul>
+<h3>2.4 Buyers page (post 6)</h3>
+<ul>
+<li>Area of Expertise tiles are heading modules: <code>save_settings {heading, link}</code> → 8 local towns + "<County>" in the 9th slot; subtitle → "Browse homes for sale in the <Town> and <County> communities we serve."</li>
+<li>Then the SEO rebuild (<code>templates/buyers.html</code>, applied with <code>scripts/bbapply3.py 6 buyers.html &lt;intro_row&gt; &lt;aoe_row&gt; buyers publish</code>): replace the intro row + Area of Expertise row with one block — intro with framed photo, 6 "Why buyers choose <County>" cards, 8 area tiles, 6-step buying process, 8-question buyer FAQ (taxes, HOA/POA, dock/TVA rules, schools, commute, down payment, timing, out-of-state).</li>
+<li>Keep Moxi rows: Search Properties, Market Trends, Featured Properties ("My Office's Active Listings" — already office-scoped), Our Partners, Mortgage calculator, contact form.</li>
+<li>The Nelson <strong>BUYER GUIDE</strong> button goes away with the old row; add it back only with an office-specific MoxiPresent link.</li>
+<li>Yoast: <code>"Buying a Home in &lt;Town&gt; TN | Wallace &lt;Office&gt;"</code>.</li>
+</ul>
+<h3>2.5 Sellers page (post 7)</h3>
+<ul>
+<li>Same pattern (<code>templates/sellers.html</code>): intro, 3 "Who is buying" cards + market-report/call CTAs, 6-step selling process (price, prep, photo/video, marketing incl. Luxury Portfolio, negotiate, close), 8-question seller FAQ, valuation CTA.</li>
+<li>Removed the generic "Marketing Services" tabs row (covered by the process section); kept Luxury Services + form. Nelson <strong>SELLER GUIDE</strong> link removed.</li>
+<li>Yoast: <code>"Sell Your Home in &lt;Town&gt; TN | Wallace &lt;Office&gt;"</code>.</li>
+</ul>
+<h3>2.6 Relocation page (post 9)</h3>
+<ul>
+<li>Replace the 6 East-TN lifestyle-guide tiles row with <code>templates/relocation.html</code>: intro (Plan My Move → <code>/contact</code>, Relocation Guide PDF), 6 "Why people move to <County>" cards, 4 lifestyle tiles → local searches, 6-step long-distance move process, 8-question moving FAQ. Keep the Moxi search widget row.</li>
+<li>Yoast: <code>"Relocating to &lt;Town&gt; TN | Wallace &lt;Office&gt;"</code>.</li>
+</ul>
+<h3>2.7 Luxury page (post 8)</h3>
+<ul>
+<li>Brand-wide Wallace Luxury content stays. Fix the <strong>Search Properties</strong> button (Nelson clone pointed at a Murfreesboro drive-time search) → <code>/search#location_search_field=&lt;County&gt;%2C%20TN&amp;status=active&amp;pricemin=650000</code>. Heading → "Sophisticated guidance for lakefront &amp; luxury homes in <Town>" (adapt to the office's luxury angle). Yoast title/meta.</li>
+</ul>
+<h3>2.8 Contact page (post 16)</h3>
+<ul>
+<li>Insert <code>templates/contact.html</code> (office card: NAP, broker, Get Directions, Meet Our Agents + Google map) above the Moxi form; row bg none, padding 0. Yoast title/meta.</li>
+</ul>
+<h3>2.9 Navigation (Moxi Site Pages, no deletions)</h3>
+<ul>
+<li><strong>Counties</strong> dropdown: keep only the office's counties, in Howard's order (<code>scripts/nav_hide.py "Counties" "Loudon,Anderson,Knox,Blount,Monroe,Roane"</code>). If a wanted county has no page, ask — don't invent (Twin Lakes: "ignore mcminn").</li>
+<li><strong>Communities</strong> dropdown: map all 40 to counties, propose a tight list (Twin Lakes: 16), get Howard's pick, then <code>scripts/nav_hide.py "Communities" "&lt;list&gt;"</code>.</li>
+<li>Hide the backup "Copy" pages (Duplicate makes them visible).</li>
+<li>Verify: dropdown order live, three hidden pages still open by direct URL.</li>
+</ul>
+<h3>2.10 Still open on Twin Lakes (ask per office)</h3>
+<ul>
+<li>Office hours (GBP 9–4 Mon–Thu / 9–3 Fri vs. MapQuest 9–5 — unconfirmed).</li>
+<li>Office-specific Buyer Guide / Seller Guide links; office Zoho market-report form.</li>
+<li>Moxi-global items we can't fix per site: blank company name in the email consent text, old UA Google Analytics (no GA4).</li>
+</ul>
+<hr />
+<h2>3. Design system (copy exactly)</h2>
+<ul>
+<li>Font: <code>'Semplicita Pro', Helvetica, Arial, sans-serif</code>, forced: <code>#tlh,#tlh *:not(.fa){font-family:… !important}</code>; <code>i.fa{font-family:FontAwesome !important}</code>.</li>
+<li>Headings: weight <strong>100</strong>, uppercase, two-tone (<code>#2c3e56</code> + <code>&lt;span&gt;</code> in <code>#93a2b5</code>), h2 ≈ 40px, section h3 ≈ 24–32px. Body 16/24 <code>#333</code>, bold 700.</li>
+<li>Colours: navy <code>#0a1a2d</code> / <code>#0a2240</code>, slate <code>#2c3e56</code>, light slate <code>#93a2b5</code>, sage <code>#c9d4d1</code>, light blue-gray <code>#cfd8e1</code>, light bg <code>#e8edf2</code>.</li>
+<li>Buttons: square (<code>border-radius:0</code>), navy fill white text; <code>.tl-soft</code> light-slate fill; <code>.tl-ghost</code> outline. FA 4.7 icons.</li>
+<li>Sections alternate light / dark / sage; inner width 1180px (<code>.tl-in</code>), wide 1320px (<code>.tl-wide</code>, <code>.tl-plan</code>).</li>
+<li>Images in a row are the same size; framed photos use the two-tone frame (<code>.tl-frame</code>/<code>.tl-ph</code> or Tyler's pre-framed 768×684 images). Tile labels <code>position:relative;z-index:2</code> above the photo.</li>
+<li>Row + column: width full, padding 0, bg none, so the block controls its own spacing.</li>
+</ul>
+<p>Images available on brokerage.agent.wallacetn.com/files/2026/01/ (shared across sites): Lakes-and-Waterfront.jpg, Mountain-Homes-02.jpg, Suburban-and-Downtown.jpg, Country-and-Land-02.jpg, Walace-Real-Estate-Listing-a-Home02.jpg, Walace-Real-Estate-Relocation.jpg, Wallace-Real-Estate-Investment-Opportunities.jpg, Wallace-Real-Estate-Google-Reviews.png, <County>-County-Tennessee.jpg (Blount, Knox, Loudon, Monroe, Roane…), partner logos (*-Logo-Homepage.png). Office-specific photos (broker's story images, office logo) must be sourced per office.</p>
+<hr />
+<h2>4. Mechanics (how the scripts work)</h2>
+<p>All scripts drive the already-logged-in Chrome over CDP (<code>http://localhost:29229</code>) with Playwright. Nothing touches WordPress files.</p>
+<table>
+<thead>
+<tr>
+<th>Script</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>scripts/bbapply.py</code></td>
+<td>Home page: delete cloned rows, set HTML module, zero row/col padding, publish, verify <code>#tlh</code> + Nelson count</td>
+</tr>
+<tr>
+<td><code>scripts/bbapply2.py &lt;post&gt; &lt;html&gt; draft\|publish</code></td>
+<td>Duplicated page (Our Office): delete every row except the kept one, set HTML, save</td>
+</tr>
+<tr>
+<td><code>scripts/bbapply3.py &lt;post&gt; &lt;html&gt; &lt;target_row&gt; &lt;rows_to_delete,csv&gt; &lt;slug&gt; publish\|draft</code></td>
+<td>Generic: add an HTML module to the first column of <code>&lt;target_row&gt;</code>, delete that row's old modules/extra columns and the listed rows, zero padding, publish, verify live. Used for Buyers, Sellers, Relocation</td>
+</tr>
+<tr>
+<td><code>scripts/footer_apply.py</code></td>
+<td>Rebuild the site's footer template (post 162 on Twin Lakes) as one HTML module</td>
+</tr>
+<tr>
+<td><code>scripts/nav_hide.py "&lt;Parent&gt;" "&lt;a,b,c&gt;"</code></td>
+<td>Reorder + hide dropdown children in Site Pages (no deletions)</td>
+</tr>
+<tr>
+<td><code>scripts/set_yoast.py &lt;post&gt; "&lt;title&gt;" "&lt;desc&gt;" "&lt;kw&gt;"</code></td>
+<td>Yoast title/meta via the classic edit screen</td>
+</tr>
+<tr>
+<td><code>scripts/backup.py</code>, <code>scripts/allpages.js</code></td>
+<td>Page duplication helper; Moxi Site Pages JS (reference for <code>setShowHideValues</code>)</td>
+</tr>
+</tbody>
+</table>
+<p>Beaver Builder facts: open <code>?page_id=N&amp;preview=true&amp;fl_builder&amp;fl_builder_ui</code>; builder DOM lives in frame <code>fl_builder_ui_iframe</code>; call <code>FLBuilder.ajax({action:'render_new_module'|'save_settings'|'delete_node'|'render_layout'|'save_layout', …})</code> from the top frame; node settings in <code>FLBuilderSettingsConfig.nodes[id]</code>; reload after deletes (stale ids hang). <code>save_layout {publish:true}</code> publishes.</p>
+<p>Moxi Site Pages facts: standard WP menus are unsupported by the theme. Rows are <code>div.mxMoveableRow#nav&lt;ID&gt;</code> in nested <code>&lt;ol&gt;&lt;li&gt;</code>; move <code>&lt;li&gt;</code>s to reorder/nest; <code>jQuery(div).setShowHideValues('Show'|'Hide')</code>; <code>jQuery('input#publish').click()</code>. Remove the Zendesk launcher iframe first — it intercepts clicks. Duplicate = row action; the copy is visible in the menu until hidden.</p>
+<hr />
+<h2>5. Per-office checklist (copy for each site)</h2>
+<pre><code>Office: ______  Site: ______office.agent.wallacetn.com  Town/County: ______
+[ ] 1  Right site confirmed (MY SITES → office → Dashboard)
+[ ] 2  Discovery sheet filled (NAP, broker, roster, counties, towns, photos, guides/forms)
+[ ] 3  Audit: Nelson/Maryville counts per page recorded
+[ ] 4  Home: duplicated (hidden), HTML block applied, Yoast, verified desktop/mobile, 0 Nelson
+[ ] 5  Our Office: created, nested under About, Yoast
+[ ] 6  Footer: site template rebuilt, Appearance → Footer = Custom Footer, checked on 2 pages
+[ ] 7  Buyers: AoE tiles local, HTML block, Yoast, Moxi rows intact, backup hidden
+[ ] 8  Sellers: HTML block, Yoast, backup hidden
+[ ] 9  Relocation: HTML block, Yoast
+[ ] 10 Luxury: search button + heading + Yoast
+[ ] 11 Contact: office card + map + Yoast
+[ ] 12 Counties dropdown trimmed (list approved by Howard)
+[ ] 13 Communities dropdown trimmed (list approved by Howard)
+[ ] 14 Backups hidden; 3 hidden pages open by direct URL
+[ ] 15 Open items sent to Howard: hours, guide links, market-report form
+</code></pre>
+<h2>6. Find-and-replace map when cloning the Twin Lakes templates</h2>
+<p><code>Twin Lakes</code> → office name · <code>Lenoir City</code> → town · <code>Loudon County</code> → county · <code>105 N. A Street, Lenoir City, TN 37771</code> → address · <code>(865) 328-1111</code> / <code>+18653281111</code> → phone · <code>TwinLakes@Wallacetn.com</code> → email · <code>Tyler Letner</code> → broker · lake/landmark/interstate/school/hospital facts in the FAQs and "why" cards (rewrite, don't just swap names) · the 8 tile towns and their search URLs · Twin-Lakes-2.png logo · story photos 01–03.jpg · Google map <code>q=</code> address.</p><p style='margin-top:60px;color:#93a2b5;font-size:13px'>Wallace Real Estate &middot; internal process document</p></body></html>
