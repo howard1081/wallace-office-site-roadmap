@@ -1,0 +1,355 @@
+<div id="tlh">
+<style>
+#tlh{font-family:'Semplicita Pro',Helvetica,Arial,sans-serif;color:#333;font-size:16px;line-height:24px;width:100%;margin:0;padding:0}
+#tlh *,#tlh *:before,#tlh *:after{box-sizing:border-box}
+#tlh,#tlh *:not(.fa){font-family:'Semplicita Pro',Helvetica,Arial,sans-serif !important}
+#tlh i.fa,#tlh i.fa:before{font-family:FontAwesome !important;font-style:normal;font-weight:400 !important}
+#tlh h2.tl-h2,#tlh h3.tl-h3,#tlh .tl-svc-c h3,#tlh .tl-plan-c h3,#tlh .tl-office-card h3{font-weight:100 !important;letter-spacing:0 !important;font-style:normal !important}
+#tlh h2.tl-h2 span,#tlh .tl-svc-c h3 span,#tlh .tl-plan-c h3 span,#tlh h3.tl-h3 span,#tlh h3.tl-h3 b,#tlh .tl-office-card h3 b{font-weight:100 !important}
+#tlh p,#tlh .tl-q,#tlh .tl-a,#tlh .tl-comm a,#tlh .tl-tile-t{font-weight:400 !important;font-style:normal}
+#tlh p b,#tlh p strong,#tlh .tl-a b,#tlh .tl-nap a{font-weight:700 !important}
+#tlh .tl-lead em,#tlh .tl-partners-note{font-style:italic !important}
+#tlh .tl-btn{font-weight:400 !important;font-size:12px !important;text-transform:uppercase !important}
+#tlh .tl-stat h4{font-weight:500 !important}
+#tlh img{max-width:100%;height:auto;display:block;border:0}
+#tlh a{text-decoration:none}
+#tlh .tl-sec{width:100%;padding:60px 20px 80px}
+#tlh .tl-in{max-width:1145px;margin:0 auto}
+#tlh .tl-wide{max-width:1345px;margin:0 auto}
+#tlh h2.tl-h2{font-size:44px;line-height:1.2;font-weight:100;text-transform:uppercase;text-align:center;margin:0 0 18px;letter-spacing:0;color:#2c3e56}
+#tlh h2.tl-h2 span{font-weight:100;color:#93a2b5}
+#tlh .tl-dark h2.tl-h2{color:#fff}
+#tlh p.tl-lead{text-align:center;margin:0 auto 40px;max-width:1060px;font-size:16px;line-height:24px}
+#tlh .tl-lead em{font-style:italic}
+#tlh .tl-lead b{font-weight:700}
+#tlh .tl-dark{background:#2c3e56;color:#fff}
+#tlh .tl-dark p{color:#fff}
+#tlh .tl-dark p.tl-lead{color:#93a2b5}
+#tlh .tl-light{background:#e8edf2}
+#tlh .tl-sage{background:#cfd8e1}
+#tlh .tl-btn{display:inline-block;background:#0a1a2d !important;color:#fff !important;font-size:12px;line-height:1.2;font-weight:400;text-transform:uppercase;letter-spacing:.5px;padding:15px 20px;border:0;border-radius:0;text-align:center;transition:background .2s}
+#tlh .tl-btn:hover{background:#0a2240 !important;color:#fff !important}
+#tlh .tl-btn i{margin-right:8px;font-size:12px}
+#tlh .tl-btn.tl-full{display:block;width:100%}
+#tlh .tl-btn.tl-soft{background:#98a8bb !important;color:#fff !important}
+#tlh .tl-btn.tl-soft:hover{background:#93a2b5 !important}
+#tlh .tl-btn.tl-ghost{background:transparent !important;border:1px solid #93a2b5;color:#fff !important}
+#tlh .tl-btn.tl-ghost:hover{background:#0a1a2d !important}
+#tlh h3.tl-h3{font-size:32px;line-height:1.15;font-weight:100;text-transform:uppercase;margin:0 0 14px;color:#333}
+#tlh h3.tl-h3 b{font-weight:100;color:#2c3e56}
+#tlh .tl-dark h3.tl-h3{color:#fff}
+#tlh .tl-dark h3.tl-h3 span{color:#93a2b5}
+
+/* explore tiles */
+#tlh .tl-tiles{display:grid;grid-template-columns:repeat(4,1fr);gap:28px;padding:0 40px}
+#tlh .tl-tile{position:relative;display:block;background:#2c3e56;overflow:hidden;color:#fff}
+#tlh .tl-tile img{width:100%;aspect-ratio:4/3;object-fit:cover;transition:transform .5s}
+#tlh .tl-tile:hover img{transform:scale(1.06)}
+#tlh .tl-tile img.tl-crop{transform:scale(1.45)}
+#tlh .tl-tile:hover img.tl-crop{transform:scale(1.5)}
+#tlh .tl-why-img.tl-noframe,#tlh .tl-why-img.tl-r.tl-noframe{padding:0 !important}
+#tlh .tl-why-img.tl-noframe:before{display:none}
+#tlh .tl-why-img.tl-noframe img{aspect-ratio:auto}
+#tlh .tl-tile .tl-tile-t{position:relative;z-index:2;background:#2c3e56;padding:18px 14px 20px;text-align:center;font-size:14px;letter-spacing:1.5px;text-transform:uppercase;color:#fff;font-weight:500}
+#tlh .tl-tile .tl-tile-t span{color:#93a2b5;font-weight:400}
+#tlh .tl-tile .tl-tile-d{z-index:3;position:absolute;left:0;right:0;top:0;bottom:0;background:rgba(10,26,45,.9);color:#cfd8e1;font-size:13px;line-height:19px;padding:22px 16px;text-align:center;opacity:0;transition:opacity .3s;display:flex;align-items:center;justify-content:center}
+#tlh .tl-tile:hover .tl-tile-d,#tlh .tl-tile:focus .tl-tile-d{opacity:1}
+#tlh .tl-tile .tl-tile-d p{margin:0;color:#cfd8e1}
+
+/* lifestyle */
+#tlh .tl-life{display:grid;grid-template-columns:1fr 1fr;gap:40px 60px;padding:0 60px}
+#tlh .tl-life-c img{width:100%;aspect-ratio:3/2;object-fit:cover;margin-bottom:22px}
+#tlh .tl-life-c p{color:#2c3e56;margin:0 0 20px;text-align:justify}
+#tlh .tl-life-c p b{font-weight:700;color:#0a2240}
+
+/* market */
+#tlh .tl-market-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin:10px 0 36px}
+#tlh .tl-stat{border:1px solid #93a2b5;padding:28px 20px;text-align:center}
+#tlh .tl-stat > i{font-size:34px;color:#93a2b5;display:block;margin-bottom:14px}
+#tlh .tl-stat h4{margin:0 0 8px;font-size:18px;font-weight:500;text-transform:uppercase;letter-spacing:1px;color:#fff}
+#tlh .tl-stat p{margin:0;color:#cfd8e1;font-size:14px;line-height:21px}
+#tlh .tl-center{text-align:center}
+#tlh .tl-center .tl-btn{margin:6px 8px}
+
+/* services */
+#tlh .tl-svc{display:grid;grid-template-columns:repeat(3,1fr);gap:40px 30px;padding:0 20px}
+#tlh .tl-svc-c{text-align:center}
+#tlh .tl-svc-c > i{font-size:40px;color:#93a2b5;display:block;margin-bottom:14px}
+#tlh .tl-svc-c h3{font-size:28px;line-height:1.1;font-weight:100;text-transform:uppercase;margin:0 0 12px;color:#333}
+#tlh .tl-svc-c h3 span{color:#93a2b5}
+#tlh .tl-svc-c p{margin:0 0 18px;text-align:center}
+#tlh .tl-svc-c p b{font-weight:700}
+
+/* why */
+#tlh .tl-why{display:grid;grid-template-columns:1fr 1fr;gap:40px 60px;align-items:center;padding:10px 60px 30px}
+#tlh .tl-why-img{position:relative;padding:0 50px 40px 0}
+#tlh .tl-why-img:before{content:"";position:absolute;right:0;bottom:0;width:70%;height:75%;background:#93a2b5;opacity:.45}
+#tlh .tl-why-img.tl-r{padding:0 0 40px 50px}
+#tlh .tl-why-img.tl-r:before{right:auto;left:0}
+#tlh .tl-why-img img{position:relative;width:100%;aspect-ratio:4/3;object-fit:cover}
+#tlh .tl-frame{position:relative;width:100%;aspect-ratio:768/684;background:linear-gradient(to bottom,#cfd8e1 0,#cfd8e1 36.5%,#93a2b5 36.5%,#93a2b5 100%)}
+#tlh .tl-frame .tl-ph{position:absolute;left:9.5%;top:10.4%;width:81.1%;height:79.1%;overflow:hidden}
+#tlh .tl-frame .tl-ph img{position:static;width:131.1%;max-width:none;aspect-ratio:auto;margin:-30.1% 0 0 -30.5%}
+#tlh .tl-why-txt p{color:#fff;margin:0 0 22px;text-align:justify}
+#tlh .tl-why-txt .tl-h3{margin-bottom:16px}
+
+/* office */
+#tlh .tl-office{display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:stretch;padding:0 40px}
+#tlh .tl-office-card{background:#fff;padding:40px 44px;border-top:4px solid #0a2240}
+#tlh .tl-office-card .tl-eyebrow{font-size:12px;letter-spacing:2px;text-transform:uppercase;color:#93a2b5;margin:0 0 10px}
+#tlh .tl-office-card h3{font-size:34px;font-weight:100;text-transform:uppercase;margin:0 0 18px;color:#2c3e56}
+#tlh .tl-office-card h3 b{font-weight:100;color:#93a2b5}
+#tlh .tl-office-card p{margin:0 0 14px;color:#333}
+#tlh .tl-office-card .tl-nap{font-size:18px;line-height:28px;margin:0 0 22px}
+#tlh .tl-office-card .tl-nap a{color:#0a2240 !important;font-weight:700}
+#tlh .tl-office-card .tl-nap i{width:26px;color:#93a2b5}
+#tlh .tl-office-map{min-height:360px;background:#cfd8e1}
+#tlh .tl-office-map iframe{width:100%;height:100%;min-height:360px;border:0;display:block;filter:grayscale(.25)}
+
+/* reviews + partners */
+#tlh .tl-reviews{max-width:1100px;margin:0 auto;background:#cfd8e1;padding:40px 40px 20px}
+#tlh .tl-reviews h2.tl-h2{color:#2c3e56;font-size:30px;margin-bottom:24px}
+#tlh .tl-reviews h2.tl-h2 span{color:#0a2240}
+#tlh .tl-partners{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:40px 60px;margin:50px auto 18px;max-width:1100px}
+#tlh .tl-partners img{height:46px;width:auto;filter:brightness(0) invert(1);opacity:.95}
+#tlh .tl-partners-note{text-align:center;font-style:italic;color:#93a2b5 !important;font-size:14px;margin:0}
+
+/* plan */
+#tlh #tl-plan .tl-wide{max-width:1320px}
+#tlh .tl-plan{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+#tlh .tl-plan-c{background:#fff;padding:30px 16px 30px;text-align:center;box-shadow:0 1px 2px rgba(0,0,0,.04)}
+#tlh .tl-plan-c h3{font-size:26px;font-weight:100;text-transform:uppercase;margin:0 0 20px;color:#333;line-height:1.15}
+#tlh .tl-plan-c h3 span{color:#93a2b5}
+#tlh .tl-plan-c img{width:100%;aspect-ratio:16/10;object-fit:cover;margin:0 0 22px}
+#tlh .tl-plan-c p{margin:0 0 22px;color:#333}
+#tlh .tl-plan-c p b{font-weight:700}
+#tlh .tl-plan-c .tl-btn{margin-bottom:10px}
+
+/* community */
+#tlh .tl-comm{text-align:center;font-size:14px;letter-spacing:2.5px;text-transform:uppercase;line-height:30px;margin:0 0 30px}
+#tlh .tl-comm a{color:#fff !important}
+#tlh .tl-comm a:hover{color:#93a2b5 !important}
+#tlh .tl-comm span{color:#93a2b5;margin:0 10px}
+
+/* faq */
+#tlh .tl-faq{display:grid;grid-template-columns:1fr 1fr;gap:12px 24px;max-width:1060px;margin:0 auto 24px}
+#tlh .tl-q{background:#93a2b5;color:#fff;padding:10px 15px;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:12px;font-size:16px;line-height:24px}
+#tlh .tl-q:after{content:"+";font-size:22px;line-height:1;color:#fff}
+#tlh .tl-faq-i.tl-open .tl-q:after{content:"\2212"}
+#tlh .tl-a{display:none;background:#fff;color:#333;padding:16px 18px;font-size:15px;line-height:23px}
+#tlh .tl-a p{color:#333;margin:0}
+#tlh .tl-a b{font-weight:700}
+#tlh .tl-faq-i.tl-open .tl-a{display:block}
+#tlh p.tl-faq-foot{text-align:center;color:#fff;margin:10px 0 0}
+#tlh p.tl-faq-foot a{color:#cfd8e1 !important;text-decoration:underline}
+
+@media (max-width:1300px){#tlh .tl-plan-c h3{font-size:23px}}
+@media (max-width:1024px){
+ #tlh .tl-tiles{grid-template-columns:repeat(3,1fr);padding:0}
+ #tlh .tl-life,#tlh .tl-why{padding:0}
+ #tlh .tl-svc,#tlh .tl-plan,#tlh .tl-market-grid{grid-template-columns:repeat(2,1fr)}
+ #tlh .tl-office{grid-template-columns:1fr;padding:0}
+}
+@media (max-width:768px){
+ #tlh .tl-sec{padding:44px 16px 54px}
+ #tlh h2.tl-h2{font-size:32px}
+ #tlh h3.tl-h3,#tlh .tl-office-card h3{font-size:26px}
+ #tlh .tl-tiles{grid-template-columns:repeat(2,1fr);gap:16px}
+ #tlh .tl-life,#tlh .tl-why,#tlh .tl-svc,#tlh .tl-plan,#tlh .tl-market-grid,#tlh .tl-faq{grid-template-columns:1fr}
+ #tlh .tl-why-img,#tlh .tl-why-img.tl-r{padding:0 24px 24px 0}
+ #tlh .tl-why.tl-flip .tl-why-img{order:-1}
+ #tlh .tl-office-card{padding:28px 22px}
+ #tlh .tl-reviews{padding:24px 16px 10px}
+ #tlh .tl-comm{letter-spacing:1.5px;line-height:28px}
+ #tlh .tl-partners img{height:36px}
+}
+</style>
+
+<!-- EXPLORE -->
+<section class="tl-sec tl-sage" id="tl-explore">
+ <div class="tl-in">
+  <h2 class="tl-h2">Explore Dayton <span>&amp; Rhea County</span></h2>
+  <p class="tl-lead">Our TN Valley office is in Dayton, the Rhea County seat between Chickamauga Lake and Walden Ridge. From lake homes and mountain views to in-town neighborhoods and farmland, these are the places we live, list and sell every day.</p>
+  <div class="tl-tiles">
+   <a class="tl-tile" href="/search#location_search_field=Dayton%2C%20TN&status=active"><img src="https://brokerage.agent.wallacetn.com/files/2026/01/Rhea-County-Tennessee.jpg" alt="Dayton TN homes for sale" loading="lazy"><div class="tl-tile-d"><p>Our hometown. The Rhea County seat on Highway 27, home to Bryan College, the historic Rhea County Courthouse and easy access to Chickamauga Lake.</p></div><div class="tl-tile-t">Dayton <span>TN</span></div></a>
+   <a class="tl-tile" href="/search#location_search_field=Spring%20City%2C%20TN&status=active"><img src="https://brokerage.agent.wallacetn.com/files/2026/01/Lakes-and-Waterfront.jpg" alt="Spring City TN homes for sale" loading="lazy"><div class="tl-tile-d"><p>A lake town on Watts Bar Lake in north Rhea County. Coves, docks, lake lots and quiet country roads.</p></div><div class="tl-tile-t">Spring City <span>TN</span></div></a>
+   <a class="tl-tile" href="/search#location_search_field=Graysville%2C%20TN&status=active"><img src="https://brokerage.agent.wallacetn.com/files/2026/01/Mountain-Homes-02.jpg" alt="Graysville TN homes for sale" loading="lazy"><div class="tl-tile-d"><p>A small town at the foot of Walden Ridge just south of Dayton, with mountain views, creeks and room to spread out.</p></div><div class="tl-tile-t">Graysville <span>TN</span></div></a>
+   <a class="tl-tile" href="/search#location_search_field=Evensville%2C%20TN&status=active"><img src="https://brokerage.agent.wallacetn.com/files/2026/01/Country-and-Land-02.jpg" alt="Evensville TN homes for sale" loading="lazy"><div class="tl-tile-d"><p>Farmland and country homes north of Dayton between the lake and the ridge.</p></div><div class="tl-tile-t">Evensville <span>TN</span></div></a>
+   <a class="tl-tile" href="/search#location_search_field=Rockwood%2C%20TN&status=active"><img src="https://brokerage.agent.wallacetn.com/files/2026/01/Roane-County-Tennessee.jpg" alt="Rockwood TN homes for sale" loading="lazy"><div class="tl-tile-d"><p>North in Roane County on Watts Bar Lake, with I-40 access toward Knoxville and Crossville.</p></div><div class="tl-tile-t">Rockwood <span>TN</span></div></a>
+   <a class="tl-tile" href="/search#location_search_field=Kingston%2C%20TN&status=active"><img src="https://brokerage.agent.wallacetn.com/files/2026/01/Suburban-and-Downtown.jpg" alt="Kingston TN homes for sale" loading="lazy"><div class="tl-tile-d"><p>The Roane County seat on Watts Bar Lake, with a historic downtown and lakefront living.</p></div><div class="tl-tile-t">Kingston <span>TN</span></div></a>
+   <a class="tl-tile" href="/search#location_search_field=Decatur%2C%20TN&status=active"><img src="https://brokerage.agent.wallacetn.com/files/2026/01/Lakes-and-Waterfront.jpg" alt="Decatur TN homes for sale" loading="lazy"><div class="tl-tile-d"><p>The Meigs County seat across Chickamauga and Watts Bar Lake, known for lake homes and a rural feel.</p></div><div class="tl-tile-t">Decatur <span>TN</span></div></a>
+   <a class="tl-tile" href="/search#location_search_field=Pikeville%2C%20TN&status=active"><img src="https://brokerage.agent.wallacetn.com/files/2026/01/Country-and-Land-02.jpg" alt="Pikeville TN homes for sale" loading="lazy"><div class="tl-tile-d"><p>The Bledsoe County seat in the Sequatchie Valley, close to Fall Creek Falls State Park.</p></div><div class="tl-tile-t">Pikeville <span>TN</span></div></a>
+  </div>
+ </div>
+</section>
+
+<!-- LIFESTYLE -->
+<section class="tl-sec tl-light" id="tl-lifestyle">
+ <div class="tl-in">
+  <h2 class="tl-h2">Search Homes <span>By Lifestyle</span></h2>
+  <p class="tl-lead"><em>Start with how you want to live. Rhea County has two lakes, mountain ridges, a historic downtown and plenty of open land. Pick a category to see current homes for sale.</em></p>
+  <div class="tl-life">
+   <div class="tl-life-c"><img src="https://brokerage.agent.wallacetn.com/files/2026/01/Lakes-and-Waterfront.jpg" alt="Lake homes on Chickamauga and Watts Bar Lake"><h3 class="tl-h3"><b>Lake &amp;</b> Waterfront</h3><p>Rhea County sits on <b>Chickamauga Lake</b> and <b>Watts Bar Lake</b>. We know the coves, <b>TVA dock rules</b> and lake-access neighborhoods from Dayton to Spring City.</p><a class="tl-btn tl-full" href="/search#location_search_field=Rhea%20County%2C%20TN&status=active&water=1"><i class="fa fa-tint"></i>Search Waterfront Homes</a></div>
+   <div class="tl-life-c"><img src="https://brokerage.agent.wallacetn.com/files/2026/01/Mountain-Homes-02.jpg" alt="Mountain view homes near Dayton"><h3 class="tl-h3"><b>Mountain &amp;</b> Views</h3><p>Homes along <b>Walden Ridge</b> and the hills above Dayton and Graysville, close to <b>Laurel-Snow State Natural Area</b> trails and waterfalls.</p><a class="tl-btn tl-full" href="/search#location_search_field=Rhea%20County%2C%20TN&status=active"><i class="fa fa-tree"></i>Search Homes With Views</a></div>
+   <div class="tl-life-c"><img src="https://brokerage.agent.wallacetn.com/files/2026/01/Suburban-and-Downtown.jpg" alt="In-town homes in Dayton"><h3 class="tl-h3"><b>In-Town</b> Dayton</h3><p>Established streets near downtown Dayton and newer homes close to shopping, schools, <b>Bryan College</b> and Highway 27.</p><a class="tl-btn tl-full" href="/search#location_search_field=Dayton%2C%20TN&status=active"><i class="fa fa-home"></i>Search Dayton Homes</a></div>
+   <div class="tl-life-c"><img src="https://brokerage.agent.wallacetn.com/files/2026/01/Country-and-Land-02.jpg" alt="Country homes and land in Rhea County"><h3 class="tl-h3"><b>Country &amp;</b> Land</h3><p>Want <b>acreage</b>, a barn or a mini-farm? Evensville, Graysville and the valley around Dayton still offer pasture and building lots. We cover <b>septic, wells and road frontage</b>.</p><a class="tl-btn tl-full" href="/search#location_search_field=Rhea%20County%2C%20TN&status=active&ptype=5"><i class="fa fa-tree"></i>Search Land &amp; Acreage</a></div>
+  </div>
+ </div>
+</section>
+
+<!-- MARKET -->
+<section class="tl-sec tl-dark" id="tl-market">
+ <div class="tl-in">
+  <h2 class="tl-h2">Rhea County <span>Market Snapshot</span></h2>
+  <p class="tl-lead">Rhea County draws buyers who want lake living, mountain views and lower costs within reach of Chattanooga. Prices vary a lot between a lakefront home, an in-town Dayton house and rural acreage, so we build your report around the exact area and property type you care about.</p>
+  <div class="tl-market-grid">
+   <div class="tl-stat"><i class="fa fa-line-chart"></i><h4>Neighborhood Pricing</h4><p>Recent sales and active competition for the specific area or subdivision you're watching.</p></div>
+   <div class="tl-stat"><i class="fa fa-tint"></i><h4>Lake &amp; Land Trends</h4><p>What lakefront homes and acreage are really selling for on Chickamauga and Watts Bar Lake.</p></div>
+   <div class="tl-stat"><i class="fa fa-home"></i><h4>Your Home's Value</h4><p>A no-pressure estimate from an agent who works Dayton and Rhea County every day.</p></div>
+  </div>
+  <div class="tl-center">
+   <a class="tl-btn" href="/contact"><i class="fa fa-file-text-o"></i>Request a Rhea County Market Report</a>
+   <a class="tl-btn tl-ghost" href="tel:+14239991111"><i class="fa fa-phone"></i>Call (423) 999-1111</a>
+  </div>
+ </div>
+</section>
+
+<!-- SERVICES -->
+<section class="tl-sec tl-light" id="tl-services">
+ <div class="tl-in">
+  <h2 class="tl-h2">Real Estate <span>Services</span></h2>
+  <p class="tl-lead">Wallace TN Valley supports <b>buyers</b>, <b>sellers</b>, <b>investors</b> and <b>relocating clients</b> across Dayton and Rhea County, backed by the full resources of Wallace Real Estate. Explore the services below to find the right help.</p>
+  <div class="tl-svc">
+   <div class="tl-svc-c"><i class="fa fa-plane"></i><h3>Relocation <span>Services</span></h3><p>Moving to the Tennessee Valley from out of state? We help with <b>area shortlists</b>, video tours, timelines and trusted local vendors so your move to Dayton goes smoothly.</p><a class="tl-btn tl-full" href="/relocation"><i class="fa fa-plane"></i>Get Relocation Help</a></div>
+   <div class="tl-svc-c"><i class="fa fa-diamond"></i><h3>Luxury <span>Services</span></h3><p>Lakefront homes and estates on acreage need <b>elevated presentation</b> and <b>targeted marketing</b>. As a Luxury Portfolio International affiliate we put Rhea County's finest homes in front of qualified buyers.</p><a class="tl-btn tl-full" href="/luxury"><i class="fa fa-diamond"></i>Get Luxury Strategy</a></div>
+   <div class="tl-svc-c"><i class="fa fa-building-o"></i><h3>Property <span>Management</span></h3><p>Own a rental or second home you're not using year-round? Wallace's property management team handles <b>tenant placement</b>, <b>maintenance</b> and <b>reporting</b> so your investment stays steady.</p><a class="tl-btn tl-full" href="/contact"><i class="fa fa-building-o"></i>Get Management Help</a></div>
+   <div class="tl-svc-c"><i class="fa fa-briefcase"></i><h3>Commercial <span>Services</span></h3><p>From downtown Dayton storefronts to land along the Highway 27 corridor, Wallace Commercial brings local knowledge and underwriting support to every deal.</p><a class="tl-btn tl-full" href="/contact"><i class="fa fa-briefcase"></i>Get Commercial Guidance</a></div>
+   <div class="tl-svc-c"><i class="fa fa-home"></i><h3>Residential <span>Services</span></h3><p>We help buyers win with <b>smart search and negotiation</b>, and help sellers get top dollar with prep strategy, strong marketing and steady follow-through from list to close.</p><a class="tl-btn tl-full" href="/contact"><i class="fa fa-home"></i>Get Buying &amp; Selling Help</a></div>
+   <div class="tl-svc-c"><i class="fa fa-wrench"></i><h3>New <span>Construction</span></h3><p>New homes are going up across Dayton and Rhea County. We help you compare <b>builders</b>, <b>lots</b>, <b>timelines</b> and <b>upgrades</b>, and we read the contract and warranty with you.</p><a class="tl-btn tl-full" href="/search#location_search_field=Rhea%20County%2C%20TN&status=active&new_const=1"><i class="fa fa-wrench"></i>Get New Build Help</a></div>
+  </div>
+ </div>
+</section>
+
+<!-- WHY -->
+<section class="tl-sec tl-dark" id="tl-why">
+ <div class="tl-in">
+  <h2 class="tl-h2">Why Wallace <span>TN Valley</span></h2>
+  <p class="tl-lead"><em>A local Dayton office backed by the data, marketing and reach of Wallace Real Estate, serving Tennessee since 1936.</em></p>
+
+  <div class="tl-why">
+   <div class="tl-why-img tl-noframe"><img src="https://brokerage.agent.wallacetn.com/files/2026/01/Lakes-and-Waterfront.jpg" alt="Chickamauga Lake near Dayton"></div>
+   <div class="tl-why-txt"><h3 class="tl-h3"><span>Lakes &amp;</span> Ridges</h3><p>Dayton sits between Chickamauga Lake and Walden Ridge, so you can spend the morning on the water and the afternoon on a mountain trail. Our agents know the coves, the dock rules and the roads.</p><a class="tl-btn" href="/search#location_search_field=Rhea%20County%2C%20TN&status=active&water=1"><i class="fa fa-tint"></i>See Lake Homes</a></div>
+  </div>
+
+  <div class="tl-why tl-flip">
+   <div class="tl-why-txt"><h3 class="tl-h3"><span>Small Town,</span> Fully Lived</h3><p>Downtown Dayton has the historic Rhea County Courthouse, local shops and the yearly Strawberry Festival. You get real community with about a 40-minute drive to Chattanooga.</p><a class="tl-btn" href="/directory"><i class="fa fa-users"></i>Talk To A Dayton Agent</a></div>
+   <div class="tl-why-img tl-r tl-noframe"><img src="https://brokerage.agent.wallacetn.com/files/2026/01/Rhea-County-Tennessee.jpg" alt="Downtown Dayton, Tennessee"></div>
+  </div>
+
+  <div class="tl-why">
+   <div class="tl-why-img tl-noframe"><img src="https://brokerage.agent.wallacetn.com/files/2026/01/Walace-Real-Estate-Relocation.jpg" alt="Relocating to Dayton and Rhea County"></div>
+   <div class="tl-why-txt"><h3 class="tl-h3"><span>A Gentle</span> Arrival</h3><p>Many of our clients are moving from somewhere else: families moving for work, retirees heading to the lake, and buyers who want more space. We handle the details, from area tours to lenders and inspectors, so your move feels calm.</p><a class="tl-btn" href="/relocation"><i class="fa fa-map-o"></i>Start Your Plan</a></div>
+  </div>
+
+  <div class="tl-why tl-flip">
+   <div class="tl-why-txt"><h3 class="tl-h3"><span>Local Office,</span> Real Reviews</h3><p>Wallace TN Valley is built for Dayton and Rhea County buyers and sellers: local knowledge, pricing instincts and straight answers when it counts.</p><a class="tl-btn" href="/reviews"><i class="fa fa-star"></i>Read Our Reviews</a></div>
+   <div class="tl-why-img tl-r tl-noframe"><div class="tl-frame"><div class="tl-ph"><img src="https://brokerage.agent.wallacetn.com/files/2026/01/Wallace-Real-Estate-Google-Reviews.png" alt="Wallace five-star client reviews"></div></div></div>
+  </div>
+
+  <div class="tl-partners">
+   <img src="https://brokerage.agent.wallacetn.com/files/2026/01/LeadingRE-Logo-Homepage.png" alt="Leading Real Estate Companies of the World">
+   <img src="https://brokerage.agent.wallacetn.com/files/2026/01/Luxury-Portfolio-International-Logo-Homepage.png" alt="Luxury Portfolio International">
+   <img src="https://brokerage.agent.wallacetn.com/files/2026/01/CMG-Logo-Homepage.png" alt="CMG Financial">
+   <img src="https://brokerage.agent.wallacetn.com/files/2026/01/Melrose-Logo-Homepage.png" alt="Melrose Title Company">
+   <img src="https://brokerage.agent.wallacetn.com/files/2026/01/2-10-Logo-Homepage.png" alt="2-10 Home Buyers Warranty">
+   <img src="https://brokerage.agent.wallacetn.com/files/2026/01/Dogwood-Logo-Homepage.png" alt="Dogwood Insurance Group">
+  </div>
+  <p class="tl-partners-note">Trusted partners we work with.</p>
+ </div>
+</section>
+
+<!-- OFFICE -->
+<section class="tl-sec tl-sage" id="tl-office">
+ <div class="tl-in">
+  <h2 class="tl-h2">Visit Our <span>Dayton Office</span></h2>
+  <p class="tl-lead">Wallace TN Valley is on Market Street in Dayton. Stop in, or call and we'll meet you at the property.</p>
+  <div class="tl-office">
+   <div class="tl-office-card">
+    <p class="tl-eyebrow">Wallace Real Estate</p>
+    <h3><b>TN Valley</b> Office</h3>
+    <p class="tl-nap"><i class="fa fa-map-marker"></i>1377 Market Street<br><span style="display:inline-block;width:26px"></span>Dayton, TN 37321</p>
+    <p class="tl-nap"><i class="fa fa-phone"></i><a href="tel:+14239991111">(423) 999-1111</a></p>
+    <p>Principal Broker: Jillian Stavely</p>
+    <a class="tl-btn" href="https://www.google.com/maps/search/?api=1&query=Wallace+TN+Valley+1377+Market+Street%2C+Dayton%2C+TN+37321" target="_blank" rel="noopener"><i class="fa fa-location-arrow"></i>Get Directions</a>
+    <a class="tl-btn tl-soft" href="/directory" style="margin-left:8px"><i class="fa fa-users"></i>Meet Our Agents</a>
+   </div>
+   <div class="tl-office-map"><iframe title="Map to Wallace TN Valley, 1377 Market Street, Dayton TN" src="https://maps.google.com/maps?q=1377+Market+Street%2C+Dayton%2C+TN+37321&z=15&output=embed" referrerpolicy="no-referrer-when-downgrade"></iframe></div>
+  </div>
+ </div>
+</section>
+
+<!-- PLAN -->
+<section class="tl-sec tl-light" id="tl-plan">
+ <div class="tl-wide">
+  <h2 class="tl-h2">Plan <span>Your Next Move</span></h2>
+  <p class="tl-lead">Talk with a Dayton-based Wallace agent to get neighborhood-specific comps, strategy and showing coordination.</p>
+  <div class="tl-plan">
+   <div class="tl-plan-c"><h3>Sell <span>With Confidence</span></h3><img src="https://brokerage.agent.wallacetn.com/files/2026/01/Walace-Real-Estate-Listing-a-Home02.jpg" alt="Selling a home in Dayton"><p>Get a pricing plan built on <b>real Rhea County comps</b>, <b>local demand</b> and <b>your timeline</b>. We'll map prep priorities, launch strategy and negotiation levers, then market your home with modern media and consistent follow-up.</p><a class="tl-btn tl-full" href="/contact">Get My Home Value</a></div>
+   <div class="tl-plan-c"><h3>Relocation <span>Concierge</span></h3><img src="https://brokerage.agent.wallacetn.com/files/2026/01/Walace-Real-Estate-Relocation.jpg" alt="Relocating to Rhea County"><p>Moving to the Tennessee Valley? Share your <b>timeline</b>, <b>commute</b> and <b>must-haves</b>. We'll narrow areas quickly, connect trusted lenders and vendors, and keep details organized so your move feels simple instead of stressful.</p><a class="tl-btn tl-full" href="/relocation">Plan My Move</a></div>
+   <div class="tl-plan-c"><h3>Investment <span>Opportunities</span></h3><img src="https://brokerage.agent.wallacetn.com/files/2026/01/Wallace-Real-Estate-Investment-Opportunities.jpg" alt="Investment property in Dayton"><p>Lake rentals, in-town homes and land along Highway 27. Compare deals with clarity using <b>cash flow</b>, <b>demand</b>, <b>resale upside</b> and <b>risk</b>, and move fast when the numbers work.</p><a class="tl-btn tl-full" href="/search#location_search_field=Rhea%20County%2C%20TN&status=active">Browse Investment Homes</a></div>
+  </div>
+ </div>
+</section>
+
+<!-- COMMUNITY -->
+<section class="tl-sec tl-dark" id="tl-community">
+ <div class="tl-wide">
+  <h2 class="tl-h2">Search <span>By Community</span></h2>
+  <p class="tl-lead">Not sure where to start? Browse the Dayton and Rhea County communities we serve, then filter listings by price, home type and lifestyle.</p>
+  <p class="tl-comm">
+   <a href="/search#location_search_field=Dayton%2C%20TN&status=active">Dayton</a><span>&#10022;</span>
+   <a href="/search#location_search_field=Spring%20City%2C%20TN&status=active">Spring City</a><span>&#10022;</span>
+   <a href="/search#location_search_field=Graysville%2C%20TN&status=active">Graysville</a><span>&#10022;</span>
+   <a href="/search#location_search_field=Evensville%2C%20TN&status=active">Evensville</a><span>&#10022;</span>
+   <a href="/search#location_search_field=Rockwood%2C%20TN&status=active">Rockwood</a><span>&#10022;</span>
+   <a href="/search#location_search_field=Kingston%2C%20TN&status=active">Kingston</a><span>&#10022;</span>
+   <a href="/search#location_search_field=Decatur%2C%20TN&status=active">Decatur</a><span>&#10022;</span>
+   <a href="/search#location_search_field=Pikeville%2C%20TN&status=active">Pikeville</a><span>&#10022;</span>
+   <a href="/search#location_search_field=Rhea%20County%2C%20TN&status=active">Rhea County</a>
+  </p>
+  <div class="tl-center"><a class="tl-btn" href="/search#location_search_field=Rhea%20County%2C%20TN&status=active"><i class="fa fa-search"></i>Search All Rhea County Homes</a></div>
+ </div>
+</section>
+
+<!-- FAQ -->
+<section class="tl-sec tl-dark" id="tl-faq" style="padding-top:40px;padding-bottom:50px;border-top:1px solid #3b4d66">
+ <div class="tl-in">
+  <h2 class="tl-h2">Dayton &amp; Rhea County <span>Real Estate FAQs</span></h2>
+  <p class="tl-lead"><em>Quick answers to the questions we hear most about buying, selling and relocating to Dayton and the rest of Rhea County.</em></p>
+  <div class="tl-faq">
+   <div class="tl-faq-i"><div class="tl-q" role="button" tabindex="0">Which lakes are near Dayton?</div><div class="tl-a"><p>Dayton is on <b>Chickamauga Lake</b>, and <b>Watts Bar Lake</b> starts to the north near Spring City. Shoreline is managed by <b>TVA</b>, so we check dock permits and shoreline rules on every lake home.</p></div></div>
+   <div class="tl-faq-i"><div class="tl-q" role="button" tabindex="0">How far is Dayton from Chattanooga and Cleveland?</div><div class="tl-a"><p>Most clients plan on about <b>40 minutes to Chattanooga</b> by Highway 27 and roughly <b>45 minutes to Cleveland</b>. Knoxville is about 90 minutes.</p></div></div>
+   <div class="tl-faq-i"><div class="tl-q" role="button" tabindex="0">What should I know about buying a lakefront home here?</div><div class="tl-a"><p>Check the <b>TVA dock permit</b>, winter water depth, flood zone, septic or sewer, and road access. We help you confirm these before you write an offer.</p></div></div>
+   <div class="tl-faq-i"><div class="tl-q" role="button" tabindex="0">How do schools work in Rhea County?</div><div class="tl-a"><p><b>Rhea County Schools</b> serves most of the county, and <b>Dayton City School</b> serves younger students inside Dayton. Zoning follows the property, so we verify the exact school for any home.</p></div></div>
+   <div class="tl-faq-i"><div class="tl-q" role="button" tabindex="0">Is land easy to find in Rhea County?</div><div class="tl-a"><p>Yes, acreage and small farms come up often around Evensville, Graysville and the valley. Check <b>septic</b> soil tests, water service and road frontage first.</p></div></div>
+   <div class="tl-faq-i"><div class="tl-q" role="button" tabindex="0">How competitive is the Rhea County market?</div><div class="tl-a"><p>It depends on price range and property type. Well-priced homes and lake homes can move quickly. We use recent local sales to set your strategy.</p></div></div>
+   <div class="tl-faq-i"><div class="tl-q" role="button" tabindex="0">What do I need to do before selling my Dayton home?</div><div class="tl-a"><p>Start with <b>pricing</b>, <b>condition</b> and <b>presentation</b>. We'll do a walk-through, pull current Rhea County sales and plan photos and launch timing.</p></div></div>
+   <div class="tl-faq-i"><div class="tl-q" role="button" tabindex="0">I'm relocating to Dayton from out of state. Where do I start?</div><div class="tl-a"><p>Start with your <b>move date</b>, <b>budget</b> and the lifestyle you want. We'll set up a search, send video tours, line up a local lender and plan a tour of Dayton, Spring City and Graysville.</p></div></div>
+  </div>
+  <p class="tl-faq-foot">Have more questions? <a href="/contact">Get in touch</a> or call <a href="tel:+14239991111">(423) 999-1111</a> and tell us what you're looking for.</p>
+ </div>
+</section>
+
+<script>
+(function(){
+  var root=document.getElementById('tlh'); if(!root) return;
+  var items=root.querySelectorAll('.tl-faq-i');
+  Array.prototype.forEach.call(items,function(it){
+    var q=it.querySelector('.tl-q');
+    function toggle(){ var open=it.classList.contains('tl-open'); Array.prototype.forEach.call(items,function(o){o.classList.remove('tl-open')}); if(!open) it.classList.add('tl-open'); }
+    q.addEventListener('click',toggle);
+    q.addEventListener('keydown',function(e){ if(e.key==='Enter'||e.key===' '){e.preventDefault();toggle();} });
+  });
+})();
+</script>
+</div>
